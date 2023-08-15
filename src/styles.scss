@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  --clr-text: #f8f6f2;
+  --clr-background: #14110b;
+  --clr-primary: #7388b5;
+  --clr-secondary: #110b14;
+  --clr-accent: #51689a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

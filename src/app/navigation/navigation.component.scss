@@ -1,0 +1,28 @@
+nav {
+  background-color: #333;
+  height: 50px;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+
+    li {
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
