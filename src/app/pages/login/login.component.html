@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm" class="login-wrapper">
+  <h1>Login</h1>
+  <p>Willkommen zurück. Bitte logge dich mit deinem Account ein.</p>
+
+  <label for="input_email">Email</label>
+  <input
+    id="input_email"
+    class="email"
+    placeholder="EMail"
+    formControlName="email"
+    type="text"/>
+  <label for="input_password">Passwort</label>
+  <input
+    id="input_password"
+    class="password"
+    placeholder="Passwort"
+    formControlName="password"
+    type="password" />
+
+  <a routerLink="/forgot-password">Passwort vergessen?</a>
+
+  <hr />
+  <button class="login-button" (click)="login()">Login</button>
+</form>
