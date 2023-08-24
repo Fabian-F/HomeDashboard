@@ -1,14 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
-  --clr-text: #f8f6f2;
-  --clr-background: #14110b;
-  --clr-primary: #7388b5;
-  --clr-secondary: #110b14;
-  --clr-accent: #51689a;
+  --clr-text: #ecf6f9;
+  --clr-background: #0b1d22;
+  --clr-primary: #263c73;
+  --clr-secondary: #090613;
+  --clr-accent: #5239ac;
+
+  font-family: 'roboto';
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--clr-background);
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(assets/fonts/Roboto/Roboto-Regular.ttf);
 }

@@ -1,6 +1,7 @@
 nav {
-  background-color: #333;
-  height: 50px;
+  background-color: var(--clr-background);
+  height: 80px;
+  width: 100%;
   padding: 16px;
   display: flex;
   justify-content: flex-start;
@@ -15,13 +16,82 @@ nav {
     gap: 20px;
 
     li {
-      color: white;
+      color: var(--clr-text);
       font-size: 16px;
       cursor: pointer;
       text-align: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &.home {
+        font-size: 18px;
+      }
 
       &:hover {
         text-decoration: underline;
+      }
+
+      fa-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  a {
+    color: var(--clr-text);
+    text-decoration: none;
+
+    &:visited {
+      color: var(--clr-text);
+    }
+  }
+
+  .right-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-left: auto;
+  }
+
+  .user--wrapper {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--clr-primary);
+    color: var(--clr-text);
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    // Animation
+    --anim-time: 0.5s;
+    transition: width var(--anim-time), border-radius var(--anim-time);
+
+    .user--logout {
+      opacity: 0;
+      font-size: 14px;
+      word-wrap: break-word;
+      position: absolute;
+      left: 40px;
+
+      transition: opacity var(--anim-time);
+    }
+
+    .user--icon {
+      position: absolute;
+      left: 15px;
+    }
+
+    &:hover {
+      border-radius: 8px;
+      width: 96px;
+
+      .user--logout {
+        opacity: 1;
       }
     }
   }

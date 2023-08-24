@@ -1,6 +1,20 @@
 <nav>
   <ul>
-    <li>Home Dashboard</li>
-    <li>Login</li>
+    <li class="home">
+      <fa-icon [icon]="faHouse" size="xl"></fa-icon>
+      <a routerLink="/dashboard">Dashboard</a>
+    </li>
   </ul>
+
+  <div class="right-menu">
+    <ul>
+      <li><a routerLink="Einkauf">Einkauf</a></li>
+    </ul>
+
+    <div class="user--wrapper" (click)="userAction()">
+      <fa-icon class="user--icon" [icon]="faUser" size="lg"></fa-icon>
+      <span *ngIf="!authService.isLoggedIn" class="user--logout">Login</span>
+      <span *ngIf="authService.isLoggedIn" class="user--logout">Logout</span>
+    </div>
+  </div>
 </nav>
