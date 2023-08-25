@@ -4,8 +4,8 @@ html {
   --clr-text: #ecf6f9;
   --clr-background: #0b1d22;
   --clr-primary: #263c73;
-  --clr-secondary: #090613;
-  --clr-accent: #5239ac;
+  --clr-secondary: #06191e;
+  --clr-accent: #6b7f85;
 
   font-family: 'roboto';
 }
@@ -18,6 +18,19 @@ body {
 
 .clickable {
   cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a {
+  color: var(--clr-text);
+  text-decoration: none;
+
+  &:visited {
+    color: var(--clr-text);
+  }
 
   &:hover {
     text-decoration: underline;

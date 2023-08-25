@@ -38,15 +38,6 @@ nav {
     }
   }
 
-  a {
-    color: var(--clr-text);
-    text-decoration: none;
-
-    &:visited {
-      color: var(--clr-text);
-    }
-  }
-
   .right-menu {
     display: flex;
     flex-direction: row;
@@ -63,13 +54,17 @@ nav {
     color: var(--clr-text);
     position: relative;
     overflow: hidden;
+    margin-left: 48px;
 
     display: flex;
     align-items: center;
 
     // Animation
     --anim-time: 0.5s;
-    transition: width var(--anim-time), border-radius var(--anim-time);
+    transition:
+      width var(--anim-time),
+      border-radius var(--anim-time),
+      margin-left var(--anim-time);
 
     .user--logout {
       opacity: 0;
@@ -89,6 +84,7 @@ nav {
     &:hover {
       border-radius: 8px;
       width: 96px;
+      margin-left: 0;
 
       .user--logout {
         opacity: 1;

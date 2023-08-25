@@ -65,7 +65,7 @@ export class AuthService {
         });
       })
       .catch(error => {
-        window.alert(error.message);
+        console.error(error.message);
       });
   }
 
@@ -81,10 +81,10 @@ export class AuthService {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox!');
+        console.log("Password reset Mail sent");
       })
       .catch(error => {
-        window.alert(error);
+        console.error(error.message)
       })
   }
 }
