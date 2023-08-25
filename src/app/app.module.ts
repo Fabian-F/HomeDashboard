@@ -13,10 +13,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListComponent } from './pages/list/list.component';
+import { StorageService } from './shared/services/storage.service';
 
 @NgModule({
   declarations: [
@@ -36,11 +36,11 @@ import { ListComponent } from './pages/list/list.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireFunctionsModule,
     FontAwesomeModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    StorageService
   ],
   bootstrap: [AppComponent]
 })
