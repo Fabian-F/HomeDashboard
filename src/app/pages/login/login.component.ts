@@ -30,10 +30,12 @@ export class LoginComponent implements OnInit {
   login(): void {
     if (this.loginForm?.valid) {
       console.log("Trying to log in...")
-      this.authService.signIn(
+      this.authService.login(
         this.loginForm.value.email,
         this.loginForm.value.password
-      );
+      ).then(() => {
+        this.router.navigate(['/dashboard'])
+      });
     }
   }
 }

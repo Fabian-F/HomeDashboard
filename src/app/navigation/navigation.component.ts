@@ -19,7 +19,7 @@ export class NavigationComponent {
 
   userAction(): void {
     if (this.authService.isLoggedIn) {
-      this.authService.signOut();
+      this.authService.logout();
     } else {
       this.router.navigate(['/login']);
     }

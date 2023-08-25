@@ -1,90 +1,45 @@
-import { Injectable, NgZone } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { Injectable, OnDestroy } from '@angular/core';
+import { Auth, User, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, authState } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { User } from './user';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
 
-  userData = new BehaviorSubject<User | null>(null);
-
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user')!);
-    return user !== null;
-  }
+  userSubscription: Subscription;
+  currentUser: User | null = null;
 
   constructor(
-    public afAuth: AngularFireAuth,
-    public afs: AngularFirestore,
-    public ngZone: NgZone,
-    public router: Router
+    private auth: Auth,
+    private router: Router
   ) {
-    if (localStorage.getItem('user')) {
-      this.userData.next(JSON.parse(localStorage.getItem('user')!));
-    }
-    // Saving user data in localstorage when logged in and setting up null when logged out
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.userData.next(user);
-        localStorage.setItem('user', JSON.stringify(this.userData.value));
-        JSON.parse(localStorage.getItem('user')!);
-      } else {
-        localStorage.setItem('user', 'null');
-        JSON.parse(localStorage.getItem('user')!);
+    this.userSubscription = authState(auth).subscribe((aUser: User | null) => {
+      this.currentUser = aUser;
+      if (aUser === null) {
+        this.router.navigate(['login']);
       }
     });
   }
 
-  setUserData(user: any) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified
-    };
-    return userRef.set(userData, {
-      merge: true
-    });
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
   }
 
-  signIn(email: string, password: string) {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then(result => {
-        this.setUserData(result.user);
-        this.afAuth.authState.subscribe(user => {
-          if (user) {
-            this.router.navigate(['dashboard']);
-          }
-        });
-      })
-      .catch(error => {
-        console.error(error.message);
-      });
+  login(email: string, password: string) {
+    return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  signOut() {
-    return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.userData.next(null);
-      this.router.navigate(['login']);
-    })
+  logout() {
+    return signOut(this.auth);
   }
 
-  forgotPassword(passwordResetEmail: string) {
-    return this.afAuth
-      .sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        console.log("Password reset Mail sent");
-      })
-      .catch(error => {
-        console.error(error.message)
-      })
+  forgotPassword(email: string) {
+    return sendPasswordResetEmail(this.auth, email);
+  }
+
+  get isLoggedIn() {
+    return this.currentUser !== null;
   }
 }
