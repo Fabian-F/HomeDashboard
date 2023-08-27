@@ -1,8 +1,8 @@
-import { Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnDestroy } from '@angular/core';
 import { ListItem, Item, aListItem, aItem, aNamed, Category } from 'src/app/shared/models/item';
 import { StorageService } from 'src/app/shared/services/storage.service';
-import { faPenToSquare, faTrash, faSpinner, faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { DocumentReference, getDoc } from '@angular/fire/firestore';
+import { faPenToSquare, faTrash, faSpinner, faCartPlus, faCircleXmark, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { getDoc } from '@angular/fire/firestore';
 import { Subscription } from 'rxjs';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 
@@ -11,11 +11,13 @@ import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnDestroy {
+export class ListComponent implements AfterViewInit, OnDestroy {
   faPenToSquare = faPenToSquare;
   faTrash = faTrash;
   faSpinner = faSpinner;
   faCartPlus = faCartPlus;
+  faCircleXmark = faCircleXmark;
+  faCircleCheck = faCircleCheck;
 
   listItems: Array<ListItem> = [];
   itemDefs: Array<Item> = [];
@@ -33,6 +35,8 @@ export class ListComponent implements OnDestroy {
     categoryControl: new FormControl(),
     onSaleControl: new FormControl(false)
   });
+
+  showLessDetails = false;
 
   constructor(
     private storageService: StorageService
@@ -64,9 +68,18 @@ export class ListComponent implements OnDestroy {
     }));
   }
 
+  ngAfterViewInit(): void {
+    this.onResize();
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.forEach(sub => sub.unsubscribe());
     this.subscriptions = [];
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.showLessDetails = window.innerWidth < 800;
   }
 
   onInput(event: InputEvent) {

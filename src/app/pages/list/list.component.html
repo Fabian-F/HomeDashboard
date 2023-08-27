@@ -1,23 +1,22 @@
 <div class="list-table--wrapper">
   <table class="list-table">
-    <tr>
-      <th>#</th>
-      <th>Einheit</th>
-      <th>Name</th>
-      <th>Kategorie</th>
-      <th>Angebot</th>
-      <th>Aktionen</th>
-    </tr>
+    <thead>
+      <th id="table-header--unit">Anzahl</th>
+      <th id="table-header--name">Name</th>
+      <th *ngIf="!showLessDetails" id="table-header--category">Kategorie</th>
+      <th id="table-header--onsale">{{showLessDetails ? '+' : 'Angebot'}}</th>
+      <th id="table-header--controls">Aktionen</th>
+    </thead>
     <ng-container *ngIf="!loading else loadingRow">
       <tr *ngFor="let item of listItems">
-        <td class="list-table-cell--text">{{item.num}}</td>
-        <td class="list-table-cell--text">{{item.type?.unit}}</td>
-        <td class="list-table-cell--text">{{item.type?.name}}</td>
-        <td class="list-table-cell--text">{{item.type?.category}}</td>
-        <td  class="list-table-cell--checkbox">
-          <input type="checkbox" class="list-table--checkbox" disabled [(ngModel)]="item.onSale" />
+        <td id="table-cell--unit">{{item.num}} {{item.type?.unit}}</td>
+        <td id="table-cell--name">{{item.type?.name}}</td>
+        <td *ngIf="!showLessDetails" id="table-cell--category">{{item.type?.category}}</td>
+        <td id="table-cell--onsale" class="list-table-cell--checkbox">
+          <fa-icon class="green-text" *ngIf="item.onSale" [icon]="faCircleCheck" size="lg"></fa-icon>
+          <fa-icon class="red-text" *ngIf="!item.onSale" [icon]="faCircleXmark" size="lg"></fa-icon>
         </td>
-        <td class="list-table-cell--controls">
+        <td id="table-cell--controls" class="list-table-cell--controls">
           <button class="list-table--button"><fa-icon [icon]="faPenToSquare"></fa-icon></button>
           <button class="list-table--button" (click)="deleteItem(item)"><fa-icon [icon]="faTrash"></fa-icon></button>
         </td>
@@ -29,38 +28,39 @@
       </tr>
     </ng-template>
   </table>
-
-  <form [formGroup]="addFormGroup" class="list-controls--wrapper">
-    <input
-      type="number"
-      formControlName="numControl"
-      class="list-controls-num" />
-    <select
-      class="list-controls-unit"
-      formControlName="unitControl">
-      <option *ngFor="let unit of units" [value]="unit">{{unit}}</option>
-    </select>
-    <input
-      type="text"
-      list="itemList"
-      formControlName="typeControl"
-      (input)="onInput($any($event))"
-      class="list-controls-type" />
-    <datalist id="itemList">
-      <option *ngFor="let item of itemDefs" [value]="item.name"></option>
-    </datalist>
-    <select
-      class="list-controls-category"
-      formControlName="categoryControl">
-      <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
-    </select>
-    <input
-      type="checkbox"
-      formControlName="onSaleControl" />
-    <button
-      class="list-controls-button--add"
-      (click)="addItem()">
-      <fa-icon [icon]="faCartPlus"></fa-icon>
-    </button>
-  </form>
 </div>
+
+<form *ngIf="!showLessDetails" [formGroup]="addFormGroup" class="list-controls--wrapper">
+  <input
+    type="number"
+    formControlName="numControl"
+    class="list-controls-num" />
+  <select
+    class="list-controls-unit"
+    formControlName="unitControl">
+    <option *ngFor="let unit of units" [value]="unit">{{unit}}</option>
+  </select>
+  <input
+    type="text"
+    list="itemList"
+    formControlName="typeControl"
+    (input)="onInput($any($event))"
+    class="list-controls-type" />
+  <datalist id="itemList">
+    <option *ngFor="let item of itemDefs" [value]="item.name"></option>
+  </datalist>
+  <select
+    class="list-controls-category"
+    formControlName="categoryControl">
+    <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
+  </select>
+  <input
+    type="checkbox"
+    formControlName="onSaleControl" />
+  <button
+    class="list-controls-button--add"
+    (click)="addItem()">
+    <fa-icon [icon]="faCartPlus"></fa-icon>
+  </button>
+</form>
+

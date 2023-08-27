@@ -7,6 +7,9 @@ html {
   --clr-secondary: #06191e;
   --clr-accent: #6b7f85;
 
+  --clr-red: #a7171a;
+  --clr-green: #71C562;
+
   font-family: 'roboto';
 }
 
@@ -35,6 +38,14 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.red-text {
+  color: var(--clr-red);
+}
+
+.green-text {
+  color: var(--clr-green);
 }
 
 @font-face {

@@ -7,11 +7,17 @@
   </ul>
 
   <div class="right-menu">
-    <ul>
-      <li><a routerLink="list">Einkauf</a></li>
-      <li><a>Rezepte</a></li>
-      <li><a>Einstellungen</a></li>
-    </ul>
+    <div class="link-menu" #linkMenu>
+      <div class="link-menu--icon">
+        <label for="link-menu--checkbox"><fa-icon [icon]="faBars" size="lg"></fa-icon></label>
+        <input id="link-menu--checkbox" type="checkbox" style="display: none" [(ngModel)]="linkMenuCheckboxValue"/>
+      </div>
+      <ul>
+        <li><a routerLink="list">Einkauf</a></li>
+        <li><a>Rezepte</a></li>
+        <li><a>Einstellungen</a></li>
+      </ul>
+    </div>
 
     <div class="user--wrapper" (click)="userAction()">
       <fa-icon class="user--icon" [icon]="faUser" size="lg"></fa-icon>
