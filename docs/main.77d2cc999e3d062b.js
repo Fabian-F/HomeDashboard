@@ -526,91 +526,91 @@ __webpack_require__.r(__webpack_exports__);
 
 function ListComponent_th_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Kategorie");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
 }
 function ListComponent_ng_container_12_tr_1_td_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    const item_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r6.type == null ? null : item_r6.type.category);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r11.type == null ? null : item_r11.type.category);
   }
 }
 function ListComponent_ng_container_12_tr_1_fa_icon_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "fa-icon", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "fa-icon", 34);
   }
   if (rf & 2) {
-    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r8.faCircleCheck);
+    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r13.faCircleCheck);
   }
 }
 function ListComponent_ng_container_12_tr_1_fa_icon_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "fa-icon", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "fa-icon", 35);
   }
   if (rf & 2) {
-    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r9.faCircleXmark);
+    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r14.faCircleXmark);
   }
 }
 function ListComponent_ng_container_12_tr_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr")(1, "td", 12);
+    const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr")(1, "td", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "td", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "td", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, ListComponent_ng_container_12_tr_1_td_5_Template, 2, 1, "td", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "td", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](7, ListComponent_ng_container_12_tr_1_fa_icon_7_Template, 1, 1, "fa-icon", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, ListComponent_ng_container_12_tr_1_fa_icon_8_Template, 1, 1, "fa-icon", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, ListComponent_ng_container_12_tr_1_td_5_Template, 2, 1, "td", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "td", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](7, ListComponent_ng_container_12_tr_1_fa_icon_7_Template, 1, 1, "fa-icon", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, ListComponent_ng_container_12_tr_1_fa_icon_8_Template, 1, 1, "fa-icon", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "td", 18)(10, "button", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "fa-icon", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "td", 30)(10, "button", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "fa-icon", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "button", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "button", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ListComponent_ng_container_12_tr_1_Template_button_click_12_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r12);
-      const item_r6 = restoredCtx.$implicit;
-      const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r11.deleteItem(item_r6));
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r17);
+      const item_r11 = restoredCtx.$implicit;
+      const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r16.deleteItem(item_r11));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](13, "fa-icon", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](13, "fa-icon", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const item_r6 = ctx.$implicit;
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2);
+    const item_r11 = ctx.$implicit;
+    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"]("", item_r6.num, " ", item_r6.type == null ? null : item_r6.type.unit, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"]("", item_r11.num, " ", item_r11.type == null ? null : item_r11.type.unit, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r6.type == null ? null : item_r6.type.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r11.type == null ? null : item_r11.type.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !ctx_r5.showLessDetails);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !ctx_r10.showLessDetails);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", item_r6.onSale);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", item_r11.onSale);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !item_r6.onSale);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !item_r11.onSale);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r5.faPenToSquare);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r10.faPenToSquare);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r5.faTrash);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r10.faTrash);
   }
 }
 function ListComponent_ng_container_12_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, ListComponent_ng_container_12_tr_1_Template, 14, 8, "tr", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, ListComponent_ng_container_12_tr_1_Template, 14, 8, "tr", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
@@ -622,7 +622,7 @@ function ListComponent_ng_container_12_Template(rf, ctx) {
 function ListComponent_ng_template_13_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "fa-icon", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "fa-icon", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -631,83 +631,57 @@ function ListComponent_ng_template_13_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r3.faSpinner)("spin", true);
   }
 }
-function ListComponent_form_15_option_3_Template(rf, ctx) {
+function ListComponent_option_18_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "option", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "option", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const unit_r16 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", unit_r16);
+    const unit_r18 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", unit_r18);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](unit_r16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](unit_r18);
   }
 }
-function ListComponent_form_15_option_6_Template(rf, ctx) {
+function ListComponent_option_21_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "option", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "option", 37);
   }
   if (rf & 2) {
-    const item_r17 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", item_r17.name);
+    const item_r19 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", item_r19.name);
   }
 }
-function ListComponent_form_15_option_8_Template(rf, ctx) {
+function ListComponent_option_23_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "option", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "option", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const category_r18 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", category_r18.name);
+    const category_r20 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", category_r20.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](category_r18.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](category_r20.name);
   }
 }
-function ListComponent_form_15_Template(rf, ctx) {
+function ListComponent_fa_icon_26_Template(rf, ctx) {
   if (rf & 1) {
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "form", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "input", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "select", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, ListComponent_form_15_option_3_Template, 2, 2, "option", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "input", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("input", function ListComponent_form_15_Template_input_input_4_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r20);
-      const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r19.onInput($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "datalist", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, ListComponent_form_15_option_6_Template, 1, 1, "option", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "select", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, ListComponent_form_15_option_8_Template, 2, 2, "option", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](9, "input", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "button", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ListComponent_form_15_Template_button_click_10_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r20);
-      const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r21.addItem());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "fa-icon", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "fa-icon", 34);
   }
   if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formGroup", ctx_r4.addFormGroup);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r4.units);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r4.itemDefs);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r4.categories);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r4.faCartPlus);
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r7.faCircleCheck);
+  }
+}
+function ListComponent_fa_icon_27_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "fa-icon", 35);
+  }
+  if (rf & 2) {
+    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx_r8.faCircleXmark);
   }
 }
 let ListComponent = /*#__PURE__*/(() => {
@@ -772,8 +746,6 @@ let ListComponent = /*#__PURE__*/(() => {
           return _ref3.apply(this, arguments);
         };
       }()));
-    }
-    ngAfterViewInit() {
       this.onResize();
     }
     ngOnDestroy() {
@@ -927,9 +899,9 @@ let ListComponent = /*#__PURE__*/(() => {
         }, false, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresolveWindow"]);
       }
     },
-    decls: 16,
-    vars: 5,
-    consts: [[1, "list-table--wrapper"], [1, "list-table"], ["id", "table-header--unit"], ["id", "table-header--name"], ["id", "table-header--category", 4, "ngIf"], ["id", "table-header--onsale"], ["id", "table-header--controls"], [4, "ngIf", "ngIfElse"], ["loadingRow", ""], ["class", "list-controls--wrapper", 3, "formGroup", 4, "ngIf"], ["id", "table-header--category"], [4, "ngFor", "ngForOf"], ["id", "table-cell--unit"], ["id", "table-cell--name"], ["id", "table-cell--category", 4, "ngIf"], ["id", "table-cell--onsale", 1, "list-table-cell--checkbox"], ["class", "green-text", "size", "lg", 3, "icon", 4, "ngIf"], ["class", "red-text", "size", "lg", 3, "icon", 4, "ngIf"], ["id", "table-cell--controls", 1, "list-table-cell--controls"], [1, "list-table--button"], [3, "icon"], [1, "list-table--button", 3, "click"], ["id", "table-cell--category"], ["size", "lg", 1, "green-text", 3, "icon"], ["size", "lg", 1, "red-text", 3, "icon"], [3, "icon", "spin"], [1, "list-controls--wrapper", 3, "formGroup"], ["type", "number", "formControlName", "numControl", 1, "list-controls-num"], ["formControlName", "unitControl", 1, "list-controls-unit"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "text", "list", "itemList", "formControlName", "typeControl", 1, "list-controls-type", 3, "input"], ["id", "itemList"], ["formControlName", "categoryControl", 1, "list-controls-category"], ["type", "checkbox", "formControlName", "onSaleControl"], [1, "list-controls-button--add", 3, "click"], [3, "value"]],
+    decls: 32,
+    vars: 11,
+    consts: [[1, "list-table--wrapper"], [1, "list-table"], ["id", "table-header--unit"], ["id", "table-header--name"], ["id", "table-header--category", 4, "ngIf"], ["id", "table-header--onsale"], ["id", "table-header--controls"], [4, "ngIf", "ngIfElse"], ["loadingRow", ""], [1, "list-controls--wrapper", 3, "formGroup"], ["type", "number", "placeholder", "#", "formControlName", "numControl", 1, "list-controls-num"], ["formControlName", "unitControl", 1, "list-controls-unit"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "text", "list", "itemList", "formControlName", "typeControl", "placeholder", "Name", 1, "list-controls-type", 3, "input"], ["id", "itemList"], ["formControlName", "categoryControl", 1, "list-controls-category"], ["tabindex", "0", 1, "list-controls-sale", 3, "keydown.enter"], ["for", "onsale-checkbox"], ["class", "green-text", "size", "lg", 3, "icon", 4, "ngIf"], ["class", "red-text", "size", "lg", 3, "icon", 4, "ngIf"], ["id", "onsale-checkbox", "type", "checkbox", "formControlName", "onSaleControl", 2, "display", "none"], ["onSaleCheckbox", ""], [1, "list-controls-button", 3, "click"], [3, "icon"], ["id", "table-header--category"], [4, "ngFor", "ngForOf"], ["id", "table-cell--unit"], ["id", "table-cell--name"], ["id", "table-cell--category", 4, "ngIf"], ["id", "table-cell--onsale", 1, "list-table-cell--checkbox"], ["id", "table-cell--controls", 1, "list-table-cell--controls"], [1, "list-table--button"], [1, "list-table--button", 3, "click"], ["id", "table-cell--category"], ["size", "lg", 1, "green-text", 3, "icon"], ["size", "lg", 1, "red-text", 3, "icon"], [3, "icon", "spin"], [3, "value"]],
     template: function ListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "table", 1)(2, "thead")(3, "th", 2);
@@ -948,7 +920,38 @@ let ListComponent = /*#__PURE__*/(() => {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, ListComponent_ng_container_12_Template, 2, 1, "ng-container", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](13, ListComponent_ng_template_13_Template, 2, 2, "ng-template", null, 8, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](15, ListComponent_form_15_Template, 12, 5, "form", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "form", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](16, "input", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "select", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](18, ListComponent_option_18_Template, 2, 2, "option", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "input", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("input", function ListComponent_Template_input_input_19_listener($event) {
+          return ctx.onInput($event);
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](20, "datalist", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](21, ListComponent_option_21_Template, 1, 1, "option", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](22, "select", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](23, ListComponent_option_23_Template, 2, 2, "option", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](24, "div", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("keydown.enter", function ListComponent_Template_div_keydown_enter_24_listener() {
+          return ctx.addFormGroup.controls["onSaleControl"].patchValue(!ctx.addFormGroup.controls["onSaleControl"].value);
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](25, "label", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](26, ListComponent_fa_icon_26_Template, 1, 1, "fa-icon", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](27, ListComponent_fa_icon_27_Template, 1, 1, "fa-icon", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](28, "input", 20, 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](30, "button", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ListComponent_Template_button_click_30_listener() {
+          return ctx.addItem();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](31, "fa-icon", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
         const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](14);
@@ -959,11 +962,23 @@ let ListComponent = /*#__PURE__*/(() => {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !ctx.loading)("ngIfElse", _r2);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !ctx.showLessDetails);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formGroup", ctx.addFormGroup);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.units);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.itemDefs);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.categories);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.addFormGroup.controls["onSaleControl"].value);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !ctx.addFormGroup.controls["onSaleControl"].value);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx.faCartPlus);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_7__.FaIconComponent],
-    styles: [".list-table[_ngcontent-%COMP%] {\n  table-layout: fixed;\n  width: 100%;\n  border-collapse: collapse;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--clr-text);\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 8px;\n  border-bottom: 1px solid var(--clr-text);\n  border-right: 1px solid var(--clr-text);\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--unit[_ngcontent-%COMP%] {\n  width: 25%;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--name[_ngcontent-%COMP%] {\n  width: auto;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--category[_ngcontent-%COMP%] {\n  width: 20%;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--onsale[_ngcontent-%COMP%] {\n  width: 10%;\n  text-align: center;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--controls[_ngcontent-%COMP%] {\n  width: 90px;\n  border-right: none;\n}\n.list-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 8px;\n  border-bottom: 1px solid var(--clr-text);\n  border-right: 1px solid var(--clr-text);\n}\n.list-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%]:nth-child(6) {\n  border-right: none;\n}\n.list-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: 0;\n}\n.list-table--wrapper[_ngcontent-%COMP%] {\n  max-height: 800px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  border: 1px solid var(--clr-text);\n  border-radius: 8px;\n}\n.list-table--button[_ngcontent-%COMP%] {\n  color: var(--clr-text);\n  background-color: var(--clr-primary);\n  border: none;\n  border-radius: 4px;\n  width: 32px;\n  height: 24px;\n}\n.list-table--button[_ngcontent-%COMP%]:hover {\n  background-color: var(--clr-accent);\n}\n.list-table--button[_ngcontent-%COMP%]:active {\n  color: black;\n}\n.list-table-cell--controls[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.list-table-cell--controls[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  margin-left: 12px;\n}\n.list-table-cell--controls[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:first-child {\n  margin: 0;\n}\n.list-table-cell--checkbox[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.list-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  text-align: start;\n}\n\n.list-controls--wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  gap: 8px;\n  width: -moz-fit-content;\n  width: fit-content;\n  padding: 8px;\n  border: 1px solid var(--clr-text);\n  border-radius: 8px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 16px;\n}"]
+    styles: [".list-table[_ngcontent-%COMP%] {\n  table-layout: fixed;\n  width: 100%;\n  border-collapse: collapse;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%] {\n  border-bottom: 1px solid var(--clr-text);\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  padding: 8px;\n  border-bottom: 1px solid var(--clr-text);\n  border-right: 1px solid var(--clr-text);\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--unit[_ngcontent-%COMP%] {\n  width: 25%;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--name[_ngcontent-%COMP%] {\n  width: auto;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--category[_ngcontent-%COMP%] {\n  width: 20%;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--onsale[_ngcontent-%COMP%] {\n  width: 10%;\n  text-align: center;\n}\n.list-table[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th#table-header--controls[_ngcontent-%COMP%] {\n  width: 90px;\n  border-right: none;\n}\n.list-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  padding: 8px;\n  border-bottom: 1px solid var(--clr-text);\n  border-right: 1px solid var(--clr-text);\n}\n.list-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%]:nth-child(6) {\n  border-right: none;\n}\n.list-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%] {\n  border-bottom: 0;\n}\n.list-table--wrapper[_ngcontent-%COMP%] {\n  max-height: 80vh;\n  overflow-x: hidden;\n  overflow-y: auto;\n  border: 1px solid var(--clr-text);\n  border-radius: 8px;\n}\n.list-table--button[_ngcontent-%COMP%] {\n  color: var(--clr-text);\n  background-color: var(--clr-primary);\n  border: none;\n  border-radius: 4px;\n  width: 32px;\n  height: 24px;\n}\n.list-table--button[_ngcontent-%COMP%]:hover {\n  background-color: var(--clr-accent);\n}\n.list-table--button[_ngcontent-%COMP%]:active {\n  color: black;\n}\n.list-table-cell--controls[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.list-table-cell--controls[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  margin-left: 12px;\n}\n.list-table-cell--controls[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:first-child {\n  margin: 0;\n}\n.list-table-cell--checkbox[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.list-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  text-align: start;\n}\n\n.list-controls--wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  width: -moz-fit-content;\n  width: fit-content;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 16px;\n  gap: 0;\n}\n.list-controls--wrapper[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  border: 1px solid var(--clr-text);\n  border-right: none;\n}\n.list-controls--wrapper[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:last-child {\n  border: 1px solid var(--clr-text);\n}\n.list-controls-num[_ngcontent-%COMP%], .list-controls-unit[_ngcontent-%COMP%], .list-controls-type[_ngcontent-%COMP%], .list-controls-category[_ngcontent-%COMP%], .list-controls-sale[_ngcontent-%COMP%], .list-controls-button[_ngcontent-%COMP%] {\n  height: 32px;\n  padding: 0 8px;\n  margin: 0;\n  background-color: var(--clr-primary);\n  color: var(--clr-text);\n  box-sizing: border-box;\n  -webkit-appearance: none;\n          appearance: none;\n}\n.list-controls-num[_ngcontent-%COMP%] {\n  width: 60px;\n  border-top-left-radius: 8px;\n  border-bottom-left-radius: 8px;\n}\n.list-controls-num[_ngcontent-%COMP%]::placeholder {\n  color: var(--clr-accent);\n}\n.list-controls-unit[_ngcontent-%COMP%] {\n  width: 80px;\n}\n.list-controls-type[_ngcontent-%COMP%]::placeholder {\n  color: var(--clr-accent);\n}\n.list-controls-sale[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.list-controls-button[_ngcontent-%COMP%] {\n  width: 64px;\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n}\n\n@media (max-width: 650px) {\n  .list-controls--wrapper[_ngcontent-%COMP%] {\n    flex-wrap: wrap;\n  }\n  .list-controls--wrapper[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    border: 1px solid var(--clr-text);\n    border-right: none;\n    border-bottom: none;\n  }\n  .list-controls-num[_ngcontent-%COMP%] {\n    width: 50%;\n    border-bottom-left-radius: 0;\n  }\n  .list-controls-unit[_ngcontent-%COMP%] {\n    width: 50%;\n    border-top-right-radius: 8px;\n    border-right: 1px solid var(--clr-text) !important;\n  }\n  .list-controls-type[_ngcontent-%COMP%] {\n    width: 100%;\n    border-right: 1px solid var(--clr-text) !important;\n  }\n  .list-controls-category[_ngcontent-%COMP%] {\n    width: 40%;\n    border-bottom-left-radius: 8px;\n    border-bottom: 1px solid var(--clr-text) !important;\n  }\n  .list-controls-sale[_ngcontent-%COMP%] {\n    width: 20%;\n    display: flex;\n    align-items: center;\n    border-bottom: 1px solid var(--clr-text) !important;\n  }\n  .list-controls-button[_ngcontent-%COMP%] {\n    width: 40%;\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 8px;\n  }\n}"]
   });
   return ListComponent;
 })();

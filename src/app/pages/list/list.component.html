@@ -30,9 +30,10 @@
   </table>
 </div>
 
-<form *ngIf="!showLessDetails" [formGroup]="addFormGroup" class="list-controls--wrapper">
+<form [formGroup]="addFormGroup" class="list-controls--wrapper">
   <input
     type="number"
+    placeholder="#"
     formControlName="numControl"
     class="list-controls-num" />
   <select
@@ -44,6 +45,7 @@
     type="text"
     list="itemList"
     formControlName="typeControl"
+    placeholder="Name"
     (input)="onInput($any($event))"
     class="list-controls-type" />
   <datalist id="itemList">
@@ -54,11 +56,23 @@
     formControlName="categoryControl">
     <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
   </select>
-  <input
-    type="checkbox"
-    formControlName="onSaleControl" />
+  <div
+    tabindex="0"
+    (keydown.enter)="addFormGroup.controls['onSaleControl'].patchValue(!addFormGroup.controls['onSaleControl'].value)"
+    class="list-controls-sale">
+    <label for="onsale-checkbox">
+      <fa-icon class="green-text" *ngIf="addFormGroup.controls['onSaleControl'].value" [icon]="faCircleCheck" size="lg"></fa-icon>
+      <fa-icon class="red-text" *ngIf="!addFormGroup.controls['onSaleControl'].value" [icon]="faCircleXmark" size="lg"></fa-icon>
+    </label>
+    <input
+      #onSaleCheckbox
+      id="onsale-checkbox"
+      style="display: none"
+      type="checkbox"
+      formControlName="onSaleControl" />
+  </div>
   <button
-    class="list-controls-button--add"
+    class="list-controls-button"
     (click)="addItem()">
     <fa-icon [icon]="faCartPlus"></fa-icon>
   </button>

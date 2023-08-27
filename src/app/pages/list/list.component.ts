@@ -11,7 +11,7 @@ import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements AfterViewInit, OnDestroy {
+export class ListComponent implements OnDestroy {
   faPenToSquare = faPenToSquare;
   faTrash = faTrash;
   faSpinner = faSpinner;
@@ -66,9 +66,7 @@ export class ListComponent implements AfterViewInit, OnDestroy {
         this.addFormGroup.controls['unitControl'].patchValue(this.units.find(unit => unit === "Stück") ?? this.units[0]);
       }
     }));
-  }
 
-  ngAfterViewInit(): void {
     this.onResize();
   }
 

@@ -52,7 +52,7 @@
   }
 
   &--wrapper {
-    max-height: 800px;
+    max-height: 80vh;
     overflow-x: hidden;
     overflow-y: auto;
     border: 1px solid var(--clr-text);
@@ -105,13 +105,117 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 8px;
     width: fit-content;
-    padding: 8px;
-    border: 1px solid var(--clr-text);
-    border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 16px;
+    gap: 0;
+
+    & > * {
+      border: 1px solid var(--clr-text);
+      border-right: none;
+
+      &:last-child {
+        border: 1px solid var(--clr-text);
+      }
+    }
+  }
+
+  &-num,
+  &-unit,
+  &-type,
+  &-category,
+  &-sale,
+  &-button {
+    height: 32px;
+    padding: 0 8px;
+    margin: 0;
+    background-color: var(--clr-primary);
+    color: var(--clr-text);
+    box-sizing: border-box;
+    appearance: none;
+  }
+
+  &-num {
+    width: 60px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    &::placeholder {
+      color: var(--clr-accent);
+    }
+  }
+
+  &-unit {
+    width: 80px;
+  }
+
+  &-type {
+
+    &::placeholder {
+      color: var(--clr-accent);
+    }
+  }
+
+  &-sale {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-button {
+    width: 64px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .list-controls {
+    &--wrapper {
+      flex-wrap: wrap;
+
+      & > * {
+        border: 1px solid var(--clr-text);
+        border-right: none;
+        border-bottom: none;
+      }
+    }
+
+    &-num {
+      width: 50%;
+      border-bottom-left-radius: 0;
+    }
+
+    &-unit {
+      width: 50%;
+      border-top-right-radius: 8px;
+      border-right: 1px solid var(--clr-text)!important;
+    }
+
+    &-type {
+      width: 100%;
+      border-right: 1px solid var(--clr-text)!important;
+    }
+
+    &-category {
+      width: 40%;
+      border-bottom-left-radius: 8px;
+      border-bottom: 1px solid var(--clr-text)!important;
+    }
+
+    &-sale {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--clr-text)!important;
+    }
+
+    &-button {
+      width: 40%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 8px;
+    }
   }
 }
