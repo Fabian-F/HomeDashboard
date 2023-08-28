@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { ListItem, Item, aListItem, aItem, aNamed, Category } from 'src/app/shared/models/item';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { faPenToSquare, faTrash, faSpinner, faCartPlus, faCircleXmark, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
@@ -37,6 +37,9 @@ export class ListComponent implements OnDestroy {
   });
 
   showLessDetails = false;
+
+  @ViewChild('numInput')
+  numInput: ElementRef<HTMLInputElement> | undefined;
 
   constructor(
     private storageService: StorageService
@@ -121,12 +124,25 @@ export class ListComponent implements OnDestroy {
     }
 
     // Reset forms
-    this.addFormGroup.controls['typeControl'].patchValue('');
-    this.addFormGroup.controls['numControl'].patchValue(1);
+    this.resetForm(newListItem.onSale);
   }
 
   deleteItem(listItem: ListItem) {
     this.storageService.deleteItem(listItem);
+  }
+
+  resetForm(onSale = false) {
+    this.lockUnitAndCategory = false;
+    this.setDisabled(this.addFormGroup.controls['unitControl'], this.lockUnitAndCategory);
+    this.setDisabled(this.addFormGroup.controls['categoryControl'], this.lockUnitAndCategory);
+    this.addFormGroup.reset({
+      numControl: 1,
+      unitControl: this.units.find(unit => unit === 'Stück') ?? this.units[0],
+      typeControl: '',
+      categoryControl: this.categories[0].name,
+      onSaleControl: onSale
+    });
+    this.numInput?.nativeElement.focus();
   }
 
   async populateListItems(aListItems: Array<aListItem>): Promise<Array<ListItem>> {

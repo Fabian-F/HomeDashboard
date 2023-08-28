@@ -93,6 +93,7 @@
     &--checkbox {
       text-align: center;
     }
+
   }
 
   th {
@@ -118,6 +119,10 @@
       &:last-child {
         border: 1px solid var(--clr-text);
       }
+    }
+
+    &.ng-untouched > button {
+      cursor: not-allowed;
     }
   }
 

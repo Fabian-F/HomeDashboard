@@ -7,26 +7,19 @@
       <th id="table-header--onsale">{{showLessDetails ? '+' : 'Angebot'}}</th>
       <th id="table-header--controls">Aktionen</th>
     </thead>
-    <ng-container *ngIf="!loading else loadingRow">
-      <tr *ngFor="let item of listItems">
-        <td id="table-cell--unit">{{item.num}} {{item.type?.unit}}</td>
-        <td id="table-cell--name">{{item.type?.name}}</td>
-        <td *ngIf="!showLessDetails" id="table-cell--category">{{item.type?.category}}</td>
-        <td id="table-cell--onsale" class="list-table-cell--checkbox">
-          <fa-icon class="green-text" *ngIf="item.onSale" [icon]="faCircleCheck" size="lg"></fa-icon>
-          <fa-icon class="red-text" *ngIf="!item.onSale" [icon]="faCircleXmark" size="lg"></fa-icon>
-        </td>
-        <td id="table-cell--controls" class="list-table-cell--controls">
-          <button class="list-table--button"><fa-icon [icon]="faPenToSquare"></fa-icon></button>
-          <button class="list-table--button" (click)="deleteItem(item)"><fa-icon [icon]="faTrash"></fa-icon></button>
-        </td>
-      </tr>
-    </ng-container>
-    <ng-template #loadingRow>
-      <tr>
-        <fa-icon [icon]="faSpinner" [spin]="true"></fa-icon>
-      </tr>
-    </ng-template>
+    <tr *ngFor="let item of listItems">
+      <td id="table-cell--unit">{{item.num}} {{item.type?.unit}}</td>
+      <td id="table-cell--name">{{item.type?.name}}</td>
+      <td *ngIf="!showLessDetails" id="table-cell--category">{{item.type?.category}}</td>
+      <td id="table-cell--onsale" class="list-table-cell--checkbox">
+        <fa-icon class="green-text" *ngIf="item.onSale" [icon]="faCircleCheck" size="lg"></fa-icon>
+        <fa-icon class="red-text" *ngIf="!item.onSale" [icon]="faCircleXmark" size="lg"></fa-icon>
+      </td>
+      <td id="table-cell--controls" class="list-table-cell--controls">
+        <button class="list-table--button"><fa-icon [icon]="faPenToSquare"></fa-icon></button>
+        <button class="list-table--button" (click)="deleteItem(item)"><fa-icon [icon]="faTrash"></fa-icon></button>
+      </td>
+    </tr>
   </table>
 </div>
 
@@ -35,6 +28,7 @@
     type="number"
     placeholder="#"
     formControlName="numControl"
+    #numInput
     class="list-controls-num" />
   <select
     class="list-controls-unit"
@@ -74,7 +68,6 @@
   <button
     class="list-controls-button"
     (click)="addItem()">
-    <fa-icon [icon]="faCartPlus"></fa-icon>
+    <fa-icon [icon]="loading ? faSpinner : faCartPlus" [spin]="loading"></fa-icon>
   </button>
 </form>
-
