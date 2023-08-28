@@ -89,16 +89,7 @@ export class ListComponent implements OnDestroy {
 
     const selectedItem = this.itemDefs.find(item => item.name === value);
 
-    if (selectedItem) {
-      // select unit and category
-      this.lockUnitAndCategory = true;
-      this.addFormGroup.controls['unitControl'].patchValue(selectedItem.unit);
-      this.addFormGroup.controls['categoryControl'].patchValue(selectedItem.category);
-    } else {
-      this.lockUnitAndCategory = false;
-    }
-    this.setDisabled(this.addFormGroup.controls['unitControl'], this.lockUnitAndCategory);
-    this.setDisabled(this.addFormGroup.controls['categoryControl'], this.lockUnitAndCategory);
+    this.lockFormElements(!!selectedItem);
   }
 
   addItem() {
@@ -132,9 +123,7 @@ export class ListComponent implements OnDestroy {
   }
 
   resetForm(onSale = false) {
-    this.lockUnitAndCategory = false;
-    this.setDisabled(this.addFormGroup.controls['unitControl'], this.lockUnitAndCategory);
-    this.setDisabled(this.addFormGroup.controls['categoryControl'], this.lockUnitAndCategory);
+    this.lockFormElements(false);
     this.addFormGroup.reset({
       numControl: 1,
       unitControl: this.units.find(unit => unit === 'Stück') ?? this.units[0],
@@ -143,6 +132,12 @@ export class ListComponent implements OnDestroy {
       onSaleControl: onSale
     });
     this.numInput?.nativeElement.focus();
+  }
+
+  lockFormElements(lock: boolean) {
+    this.lockUnitAndCategory = lock;
+    this.setDisabled(this.addFormGroup.controls['unitControl'], this.lockUnitAndCategory);
+    this.setDisabled(this.addFormGroup.controls['categoryControl'], this.lockUnitAndCategory);
   }
 
   async populateListItems(aListItems: Array<aListItem>): Promise<Array<ListItem>> {
