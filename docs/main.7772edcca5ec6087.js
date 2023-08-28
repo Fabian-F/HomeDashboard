@@ -376,11 +376,27 @@ __webpack_require__.r(__webpack_exports__);
 
 function DashboardComponent_week_day_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "week-day", 4);
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "week-day", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("dragStart", function DashboardComponent_week_day_6_Template_week_day_dragStart_0_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
+      const value_r1 = restoredCtx.$implicit;
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r2.dragStart($event, "Test-" + value_r1));
+    })("dragEnd", function DashboardComponent_week_day_6_Template_week_day_dragEnd_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
+      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r4.dragEnd());
+    })("drop", function DashboardComponent_week_day_6_Template_week_day_drop_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
+      const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r5.drop($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const value_r1 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("weekday", value_r1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("weekday", value_r1)("recipe", "Test-" + value_r1);
   }
 }
 let DashboardComponent = /*#__PURE__*/(() => {
@@ -389,7 +405,15 @@ let DashboardComponent = /*#__PURE__*/(() => {
     constructor() {
       this.WeekDay = _week_day_week_day_component__WEBPACK_IMPORTED_MODULE_0__.WeekDay;
       this.WeekDayValues = Object.values(_week_day_week_day_component__WEBPACK_IMPORTED_MODULE_0__.WeekDay);
+      this.dragging = undefined;
     }
+    dragStart(event, item) {
+      this.dragging = item;
+    }
+    dragEnd() {
+      this.dragging = undefined;
+    }
+    drop(event) {}
   }
   _class = DashboardComponent;
   _class.ɵfac = function DashboardComponent_Factory(t) {
@@ -400,7 +424,7 @@ let DashboardComponent = /*#__PURE__*/(() => {
     selectors: [["app-dashboard"]],
     decls: 7,
     vars: 1,
-    consts: [[2, "color", "red"], [1, "weekplan"], [1, "weekplan--calendar"], ["recipe", "Test", 3, "weekday", 4, "ngFor", "ngForOf"], ["recipe", "Test", 3, "weekday"]],
+    consts: [[2, "color", "red"], [1, "weekplan"], [1, "weekplan--calendar"], ["draggable", "true", "link", "https://www.chefkoch.de/rezepte/2683021420902347/Pikante-Pfannkuchen-mit-Schinken-und-Kaese.html", 3, "weekday", "recipe", "dragStart", "dragEnd", "drop", 4, "ngFor", "ngForOf"], ["draggable", "true", "link", "https://www.chefkoch.de/rezepte/2683021420902347/Pikante-Pfannkuchen-mit-Schinken-und-Kaese.html", 3, "weekday", "recipe", "dragStart", "dragEnd", "drop"]],
     template: function DashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 0);
@@ -410,7 +434,7 @@ let DashboardComponent = /*#__PURE__*/(() => {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Wochenplan");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, DashboardComponent_week_day_6_Template, 1, 1, "week-day", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, DashboardComponent_week_day_6_Template, 1, 2, "week-day", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
@@ -448,12 +472,17 @@ __webpack_require__.r(__webpack_exports__);
 function WeekDayComponent_a_6_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Rezept-Link");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "fa-icon", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("href", ctx_r0.link, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx_r0.faLink);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r0.linkDomain, " ");
   }
 }
 var WeekDay = /*#__PURE__*/(() => {
@@ -473,10 +502,27 @@ let WeekDayComponent = /*#__PURE__*/(() => {
   class WeekDayComponent {
     constructor() {
       this._done = false;
+      this._link = null;
+      this.linkDomain = null;
       this.faCalendarMinus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faCalendarMinus;
       this.faCalendarPlus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faCalendarPlus;
+      this.faLink = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faLink;
       this.weekday = WeekDay.Montag;
       this.recipe = 'Leer';
+    }
+    set link(value) {
+      if (!value) {
+        this._link = null;
+        this.linkDomain = null;
+        return;
+      }
+      this.linkDomain = this.extractDomain(value);
+      if (this.linkDomain) {
+        this._link = value;
+      }
+    }
+    get link() {
+      return this._link;
     }
     get done() {
       return this._done;
@@ -486,6 +532,34 @@ let WeekDayComponent = /*#__PURE__*/(() => {
     }
     onClick() {
       this.done = !this.done;
+    }
+    onMouseDown(event) {
+      if (event.target instanceof HTMLAnchorElement) return;
+      this.mouseDownTime = Date.now();
+    }
+    onMouseUp() {
+      if (!this.mouseDownTime) return;
+      const mouseUpTime = Date.now();
+      const timeDiff = mouseUpTime - this.mouseDownTime;
+      if (timeDiff > 200) {
+        if (this.link) {
+          window.open(this.link, "_blank");
+        }
+      } else {
+        this.onClick();
+      }
+    }
+    extractDomain(link) {
+      try {
+        const url = new URL(link);
+        let domain = url.hostname;
+        if (domain.startsWith("www.")) {
+          domain = domain.slice(4);
+        }
+        return domain;
+      } catch (error) {
+        return null;
+      }
     }
     coerceBooleanProperty(value) {
       return value != null && `${value}` !== 'false';
@@ -506,12 +580,14 @@ let WeekDayComponent = /*#__PURE__*/(() => {
     },
     decls: 7,
     vars: 5,
-    consts: [[1, "weekday", 3, "ngClass", "click"], [1, "weekday--day"], ["size", "lg", 1, "weekday--icon", 3, "icon"], [1, "weekday--recipe"], ["class", "weekday--link", 3, "href", 4, "ngIf"], [1, "weekday--link", 3, "href"]],
+    consts: [[1, "weekday", 3, "ngClass", "mousedown", "mouseup"], [1, "weekday--day"], ["size", "lg", 1, "weekday--icon", 3, "icon"], [1, "weekday--recipe"], ["class", "weekday--link", "target", "_blank", 3, "href", 4, "ngIf"], ["target", "_blank", 1, "weekday--link", 3, "href"], ["size", "lg", 2, "margin-right", "8px", 3, "icon"]],
     template: function WeekDayComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WeekDayComponent_Template_div_click_0_listener() {
-          return ctx.onClick();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mousedown", function WeekDayComponent_Template_div_mousedown_0_listener($event) {
+          return ctx.onMouseDown($event);
+        })("mouseup", function WeekDayComponent_Template_div_mouseup_0_listener() {
+          return ctx.onMouseUp();
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "fa-icon", 2);
@@ -520,7 +596,7 @@ let WeekDayComponent = /*#__PURE__*/(() => {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, WeekDayComponent_a_6_Template, 2, 1, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, WeekDayComponent_a_6_Template, 3, 3, "a", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
@@ -530,9 +606,9 @@ let WeekDayComponent = /*#__PURE__*/(() => {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.weekday, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.recipe);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.recipe, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.link);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.linkDomain !== null);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__.FaIconComponent],

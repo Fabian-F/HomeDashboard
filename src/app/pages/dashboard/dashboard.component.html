@@ -3,7 +3,12 @@
   <h1>Wochenplan</h1>
   <div class="weekplan--calendar">
     <week-day *ngFor="let value of WeekDayValues"
+      draggable="true"
+      (dragStart)="dragStart($any($event), 'Test-' + value)"
+      (dragEnd)="dragEnd()"
+      (drop)="drop($any($event))"
       [weekday]="value"
-      recipe="Test" />
+      [recipe]="'Test-' + value"
+      link="https://www.chefkoch.de/rezepte/2683021420902347/Pikante-Pfannkuchen-mit-Schinken-und-Kaese.html" />
   </div>
 </div>
