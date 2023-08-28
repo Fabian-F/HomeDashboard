@@ -143,7 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser */ 1481);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser */ 1481);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 158);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./navigation/navigation.component */ 3719);
@@ -152,14 +152,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/forgot-password/forgot-password.component */ 4763);
 /* harmony import */ var _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/services/auth.service */ 629);
 /* harmony import */ var src_environments_environment_development__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/environments/environment.development */ 1261);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 4006);
-/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ 6920);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ 4006);
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ 6920);
 /* harmony import */ var _pages_list_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/list/list.component */ 50);
 /* harmony import */ var _shared_services_storage_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/services/storage.service */ 1303);
-/* harmony import */ var _angular_fire_app__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/fire/app */ 3692);
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/fire/auth */ 7158);
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/fire/firestore */ 7554);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _angular_fire_app__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/fire/app */ 3692);
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/fire/auth */ 7158);
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/fire/firestore */ 7554);
+/* harmony import */ var _pages_dashboard_week_day_week_day_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/dashboard/week-day/week-day.component */ 3365);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 4650);
+
 
 
 
@@ -187,20 +189,20 @@ let AppModule = /*#__PURE__*/(() => {
   _class.ɵfac = function AppModule_Factory(t) {
     return new (t || _class)();
   };
-  _class.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({
+  _class.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineNgModule"]({
     type: _class,
     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent]
   });
-  _class.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({
+  _class.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({
     providers: [_shared_services_auth_service__WEBPACK_IMPORTED_MODULE_6__.AuthService, _shared_services_storage_service__WEBPACK_IMPORTED_MODULE_9__.StorageService],
-    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.ReactiveFormsModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__.FontAwesomeModule, (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_14__.provideFirebaseApp)(() => (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_14__.initializeApp)(src_environments_environment_development__WEBPACK_IMPORTED_MODULE_7__.environment.firebase)), (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_15__.provideAuth)(() => (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_15__.getAuth)()), (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_16__.provideFirestore)(() => (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_16__.getFirestore)())]
+    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_12__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.ReactiveFormsModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_14__.FontAwesomeModule, (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_15__.provideFirebaseApp)(() => (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_15__.initializeApp)(src_environments_environment_development__WEBPACK_IMPORTED_MODULE_7__.environment.firebase)), (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_16__.provideAuth)(() => (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_16__.getAuth)()), (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__.provideFirestore)(() => (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__.getFirestore)())]
   });
   return AppModule;
 })();
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](AppModule, {
-    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_2__.NavigationComponent, _pages_login_login_component__WEBPACK_IMPORTED_MODULE_3__.LoginComponent, _pages_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent, _pages_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_5__.ForgotPasswordComponent, _pages_list_list_component__WEBPACK_IMPORTED_MODULE_8__.ListComponent],
-    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.ReactiveFormsModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__.FontAwesomeModule, _angular_fire_app__WEBPACK_IMPORTED_MODULE_14__.FirebaseAppModule, _angular_fire_auth__WEBPACK_IMPORTED_MODULE_15__.AuthModule, _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_16__.FirestoreModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵsetNgModuleScope"](AppModule, {
+    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_2__.NavigationComponent, _pages_login_login_component__WEBPACK_IMPORTED_MODULE_3__.LoginComponent, _pages_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent, _pages_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_5__.ForgotPasswordComponent, _pages_list_list_component__WEBPACK_IMPORTED_MODULE_8__.ListComponent, _pages_dashboard_week_day_week_day_component__WEBPACK_IMPORTED_MODULE_10__.WeekDayComponent],
+    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_12__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.ReactiveFormsModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_14__.FontAwesomeModule, _angular_fire_app__WEBPACK_IMPORTED_MODULE_15__.FirebaseAppModule, _angular_fire_auth__WEBPACK_IMPORTED_MODULE_16__.AuthModule, _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__.FirestoreModule]
   });
 })();
 
@@ -365,29 +367,178 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DashboardComponent": () => (/* binding */ DashboardComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _week_day_week_day_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./week-day/week-day.component */ 3365);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 6895);
 
+
+
+
+function DashboardComponent_week_day_6_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "week-day", 4);
+  }
+  if (rf & 2) {
+    const value_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("weekday", value_r1);
+  }
+}
 let DashboardComponent = /*#__PURE__*/(() => {
   var _class;
-  class DashboardComponent {}
+  class DashboardComponent {
+    constructor() {
+      this.WeekDay = _week_day_week_day_component__WEBPACK_IMPORTED_MODULE_0__.WeekDay;
+      this.WeekDayValues = Object.values(_week_day_week_day_component__WEBPACK_IMPORTED_MODULE_0__.WeekDay);
+    }
+  }
   _class = DashboardComponent;
   _class.ɵfac = function DashboardComponent_Factory(t) {
     return new (t || _class)();
   };
-  _class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  _class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
     type: _class,
     selectors: [["app-dashboard"]],
-    decls: 2,
-    vars: 0,
+    decls: 7,
+    vars: 1,
+    consts: [[2, "color", "red"], [1, "weekplan"], [1, "weekplan--calendar"], ["recipe", "Test", 3, "weekday", 4, "ngFor", "ngForOf"], ["recipe", "Test", 3, "weekday"]],
     template: function DashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "dashboard works!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Baustelle!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 1)(3, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Wochenplan");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, DashboardComponent_week_day_6_Template, 1, 1, "week-day", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
       }
-    }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.WeekDayValues);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgForOf, _week_day_week_day_component__WEBPACK_IMPORTED_MODULE_0__.WeekDayComponent],
+    styles: [".weekplan--calendar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  gap: 32px;\n}\n\n@media (max-width: 1000px) {\n  .weekplan--calendar[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}"]
   });
   return DashboardComponent;
+})();
+
+/***/ }),
+
+/***/ 3365:
+/*!****************************************************************!*\
+  !*** ./src/app/pages/dashboard/week-day/week-day.component.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "WeekDay": () => (/* binding */ WeekDay),
+/* harmony export */   "WeekDayComponent": () => (/* binding */ WeekDayComponent)
+/* harmony export */ });
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ 2687);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 6895);
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ 6920);
+
+
+
+
+function WeekDayComponent_a_6_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Rezept-Link");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("href", ctx_r0.link, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+  }
+}
+var WeekDay = /*#__PURE__*/(() => {
+  (function (WeekDay) {
+    WeekDay["Montag"] = "Montag";
+    WeekDay["Dienstag"] = "Dienstag";
+    WeekDay["Mittwoch"] = "Mittwoch";
+    WeekDay["Donnerstag"] = "Donnerstag";
+    WeekDay["Freitag"] = "Freitag";
+    WeekDay["Samstag"] = "Samstag";
+    WeekDay["Sonntag"] = "Sonntag";
+  })(WeekDay || (WeekDay = {}));
+  return WeekDay;
+})();
+let WeekDayComponent = /*#__PURE__*/(() => {
+  var _class;
+  class WeekDayComponent {
+    constructor() {
+      this._done = false;
+      this.faCalendarMinus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faCalendarMinus;
+      this.faCalendarPlus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faCalendarPlus;
+      this.weekday = WeekDay.Montag;
+      this.recipe = 'Leer';
+    }
+    get done() {
+      return this._done;
+    }
+    set done(value) {
+      this._done = this.coerceBooleanProperty(value);
+    }
+    onClick() {
+      this.done = !this.done;
+    }
+    coerceBooleanProperty(value) {
+      return value != null && `${value}` !== 'false';
+    }
+  }
+  _class = WeekDayComponent;
+  _class.ɵfac = function WeekDayComponent_Factory(t) {
+    return new (t || _class)();
+  };
+  _class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    type: _class,
+    selectors: [["week-day"]],
+    inputs: {
+      weekday: "weekday",
+      recipe: "recipe",
+      link: "link",
+      done: "done"
+    },
+    decls: 7,
+    vars: 5,
+    consts: [[1, "weekday", 3, "ngClass", "click"], [1, "weekday--day"], ["size", "lg", 1, "weekday--icon", 3, "icon"], [1, "weekday--recipe"], ["class", "weekday--link", 3, "href", 4, "ngIf"], [1, "weekday--link", 3, "href"]],
+    template: function WeekDayComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WeekDayComponent_Template_div_click_0_listener() {
+          return ctx.onClick();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "fa-icon", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, WeekDayComponent_a_6_Template, 2, 1, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.done ? "done" : "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx.done ? ctx.faCalendarMinus : ctx.faCalendarPlus);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.weekday, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.recipe);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.link);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__.FaIconComponent],
+    styles: [".weekday[_ngcontent-%COMP%] {\n  --size: 156px;\n  --lineWidth: 10px;\n  border: 1px solid var(--clr-text);\n  width: var(--size);\n  height: var(--size);\n  border-radius: 16px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n          user-select: none;\n  margin: 1px;\n  background-color: var(--clr-secondary);\n  z-index: 1;\n  position: relative;\n}\n.weekday[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.weekday--day[_ngcontent-%COMP%] {\n  height: 30%;\n  border-bottom: 1px solid var(--clr-text);\n  position: relative;\n}\n.weekday--recipe[_ngcontent-%COMP%] {\n  height: 40%;\n}\n.weekday--link[_ngcontent-%COMP%] {\n  height: 30%;\n  border: none;\n}\n.weekday--icon[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 16px;\n  top: calc(50% - 10px);\n}\n.weekday.done[_ngcontent-%COMP%] {\n  border: 2px solid var(--clr-red);\n  margin: 0;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--day[_ngcontent-%COMP%] {\n  border-bottom: 2px solid var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--recipe[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--icon[_ngcontent-%COMP%] {\n  color: var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]::before, .weekday.done[_ngcontent-%COMP%]::after {\n  background-color: var(--clr-red);\n}\n.weekday[_ngcontent-%COMP%]::before {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 25%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n.weekday[_ngcontent-%COMP%]::after {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 75%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n\n@media (max-width: 400px) {\n  .weekday[_ngcontent-%COMP%] {\n    --size: 128px;\n  }\n  .weekday--icon[_ngcontent-%COMP%] {\n    display: none;\n  }\n}"]
+  });
+  return WeekDayComponent;
 })();
 
 /***/ }),

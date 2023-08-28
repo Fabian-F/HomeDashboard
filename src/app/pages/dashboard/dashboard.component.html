@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<span style="color: red">Baustelle!</span>
+<div class="weekplan">
+  <h1>Wochenplan</h1>
+  <div class="weekplan--calendar">
+    <week-day *ngFor="let value of WeekDayValues"
+      [weekday]="value"
+      recipe="Test" />
+  </div>
+</div>

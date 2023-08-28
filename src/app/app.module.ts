@@ -18,6 +18,7 @@ import { StorageService } from './shared/services/storage.service';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { WeekDayComponent } from './pages/dashboard/week-day/week-day.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     LoginComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    ListComponent
+    ListComponent,
+    WeekDayComponent
   ],
   imports: [
     BrowserModule,

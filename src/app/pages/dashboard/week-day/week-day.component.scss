@@ -1,0 +1,102 @@
+.weekday {
+  --size: 156px;
+  --lineWidth: 10px;
+
+  border: 1px solid var(--clr-text);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 1px;
+  background-color: var(--clr-secondary);
+  z-index: 1;
+  position: relative;
+
+  & > * {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--day {
+    height: 30%;
+    border-bottom: 1px solid var(--clr-text);
+    position: relative;
+  }
+
+  &--recipe {
+    height: 40%;
+  }
+
+  &--link {
+    height: 30%;
+    border: none;
+  }
+
+  &--icon {
+    position: absolute;
+    left: 16px;
+    top: calc(50% - 10px);
+  }
+
+  &.done {
+    border: 2px solid var(--clr-red);
+    margin: 0;
+
+    .weekday--day {
+      border-bottom: 2px solid var(--clr-red);
+    }
+
+    .weekday--recipe {
+      text-decoration: line-through;
+    }
+
+    .weekday--icon {
+      color: var(--clr-red);
+    }
+
+    &::before,
+    &::after {
+      background-color: var(--clr-red);
+    }
+  }
+
+  &::before {
+    content: ' ';
+    display: block;
+    width: 5px;
+    height: var(--lineWidth);
+    background-color: var(--clr-text);
+    position: absolute;
+    left: 25%;
+    top: calc(0px - var(--lineWidth));
+    z-index: 0;
+  }
+
+  &::after {
+    content: ' ';
+    display: block;
+    width: 5px;
+    height: var(--lineWidth);
+    background-color: var(--clr-text);
+    position: absolute;
+    left: 75%;
+    top: calc(0px - var(--lineWidth));
+    z-index: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .weekday {
+    --size: 128px;
+
+    &--icon {
+      display: none;
+    }
+  }
+}

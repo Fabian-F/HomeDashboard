@@ -1,0 +1,15 @@
+.weekplan {
+  &--calendar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .weekplan--calendar {
+    justify-content: center;
+  }
+}
