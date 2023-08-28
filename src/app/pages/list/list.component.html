@@ -1,26 +1,44 @@
-<div class="list-table--wrapper">
-  <table class="list-table">
-    <thead>
-      <th id="table-header--unit">Anzahl</th>
-      <th id="table-header--name">Name</th>
-      <th *ngIf="!showLessDetails" id="table-header--category">Kategorie</th>
-      <th id="table-header--onsale">{{showLessDetails ? '+' : 'Angebot'}}</th>
-      <th id="table-header--controls">Aktionen</th>
-    </thead>
-    <tr *ngFor="let item of listItems">
-      <td id="table-cell--unit">{{item.num}} {{item.type?.unit}}</td>
-      <td id="table-cell--name">{{item.type?.name}}</td>
-      <td *ngIf="!showLessDetails" id="table-cell--category">{{item.type?.category}}</td>
-      <td id="table-cell--onsale" class="list-table-cell--checkbox">
-        <fa-icon class="green-text" *ngIf="item.onSale" [icon]="faCircleCheck" size="lg"></fa-icon>
-        <fa-icon class="red-text" *ngIf="!item.onSale" [icon]="faCircleXmark" size="lg"></fa-icon>
-      </td>
-      <td id="table-cell--controls" class="list-table-cell--controls">
-        <button class="list-table--button"><fa-icon [icon]="faPenToSquare"></fa-icon></button>
-        <button class="list-table--button" (click)="deleteItem(item)"><fa-icon [icon]="faTrash"></fa-icon></button>
-      </td>
-    </tr>
-  </table>
+<div class="list-wrapper">
+  <input placeholder="Suche" type="text" [(ngModel)]="searchValue" (input)="onSearch($any($event))"/>
+  <button class="input-button" (click)="searchValue = ''; onSearch()">
+    <fa-icon [icon]="faXmark" size="2x"></fa-icon>
+  </button>
+  <div class="list-table--wrapper">
+    <table class="list-table">
+      <thead>
+        <th id="table-header--unit">Anzahl</th>
+        <th id="table-header--name">Name</th>
+        <th *ngIf="!showLessDetails" id="table-header--category">Kategorie</th>
+        <th id="table-header--onsale">{{showLessDetails ? '+' : 'Angebot'}}</th>
+        <th id="table-header--controls">Aktionen</th>
+      </thead>
+      <tr *ngFor="let item of listItems">
+        <td id="table-cell--unit">{{item.num}} {{item.type?.unit}}</td>
+        <td id="table-cell--name">{{item.type?.name}}</td>
+        <td *ngIf="!showLessDetails" id="table-cell--category">{{item.type?.category}}</td>
+        <td id="table-cell--onsale" class="list-table-cell--checkbox">
+          <fa-icon class="green-text" *ngIf="item.onSale" [icon]="faCircleCheck" size="lg"></fa-icon>
+          <fa-icon class="red-text" *ngIf="!item.onSale" [icon]="faCircleXmark" size="lg"></fa-icon>
+        </td>
+        <td id="table-cell--controls" class="list-table-cell--controls">
+          <button class="list-table--button"><fa-icon [icon]="faPenToSquare"></fa-icon></button>
+          <button class="list-table--button" (click)="deleteItem(item)"><fa-icon [icon]="faTrash"></fa-icon></button>
+        </td>
+      </tr>
+      <!-- Row if listitems are loading -->
+      <tr *ngIf="loading && listItems.length < 1">
+        <td [attr.colspan]="showLessDetails ? '4' : '5'" style="text-align: center;">
+          <fa-icon [icon]="faSpinner" [spin]="true" size="2x"></fa-icon>
+        </td>
+      </tr>
+      <!-- Row if search has no results -->
+      <tr *ngIf="!loading && listItems.length < 1">
+        <td [attr.colspan]="showLessDetails ? '4' : '5'" style="text-align: center;">
+          Suche fehlgeschlagen.
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <form [formGroup]="addFormGroup" class="list-controls--wrapper">

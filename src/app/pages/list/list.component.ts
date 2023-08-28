@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { ListItem, Item, aListItem, aItem, aNamed, Category } from 'src/app/shared/models/item';
 import { StorageService } from 'src/app/shared/services/storage.service';
-import { faPenToSquare, faTrash, faSpinner, faCartPlus, faCircleXmark, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare, faTrash, faSpinner, faCartPlus, faCircleXmark, faCircleCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { getDoc } from '@angular/fire/firestore';
 import { Subscription } from 'rxjs';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
@@ -18,13 +18,16 @@ export class ListComponent implements OnDestroy {
   faCartPlus = faCartPlus;
   faCircleXmark = faCircleXmark;
   faCircleCheck = faCircleCheck;
+  faXmark = faXmark;
 
+  allListItems: Array<ListItem> = [];
   listItems: Array<ListItem> = [];
   itemDefs: Array<Item> = [];
   categories: Array<Category> = [];
   units: Array<string> = [];
   loading = false;
   lockUnitAndCategory = false;
+  searchValue = '';
 
   subscriptions: Array<Subscription> = [];
 
@@ -46,6 +49,7 @@ export class ListComponent implements OnDestroy {
   ) {
     this.subscriptions.push(this.storageService.listItems.subscribe(async (aListItems: Array<aListItem>) => {
       this.loading = true;
+      this.allListItems = await this.populateListItems(aListItems);
       this.listItems = await this.populateListItems(aListItems);
       this.loading = false;
     }));
@@ -92,6 +96,20 @@ export class ListComponent implements OnDestroy {
     this.lockFormElements(!!selectedItem);
   }
 
+  onSearch(event?: InputEvent) {
+    if (!event) {
+      this.searchValue = '';
+    }
+
+    if (this.searchValue) {
+      this.listItems = this.allListItems.filter((listItem: ListItem) => {
+        return listItem.type?.name?.toLowerCase().includes(this.searchValue.toLowerCase());
+      })
+    } else {
+      this.listItems = this.allListItems;
+    }
+  }
+
   addItem() {
     // Figure out if the item already exists and the user wants to update the number of items
     const existingListItem = this.listItems.find(listItem => {
@@ -115,20 +133,25 @@ export class ListComponent implements OnDestroy {
     }
 
     // Reset forms
-    this.resetForm(newListItem.onSale);
+    this.resetForm(newListItem.num, newListItem.type!.unit, newListItem.type!.category, newListItem.onSale);
   }
 
   deleteItem(listItem: ListItem) {
     this.storageService.deleteItem(listItem);
   }
 
-  resetForm(onSale = false) {
+  resetForm(
+    num = 1,
+    unit = this.units.find(unit => unit === 'Stück') ?? this.units[0],
+    category = this.categories[0].name,
+    onSale = false
+    ) {
     this.lockFormElements(false);
     this.addFormGroup.reset({
-      numControl: 1,
-      unitControl: this.units.find(unit => unit === 'Stück') ?? this.units[0],
+      numControl: num,
+      unitControl: unit,
       typeControl: '',
-      categoryControl: this.categories[0].name,
+      categoryControl: category,
       onSaleControl: onSale
     });
     this.numInput?.nativeElement.focus();
