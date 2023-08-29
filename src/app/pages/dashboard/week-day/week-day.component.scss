@@ -31,11 +31,19 @@
 
   &--recipe {
     height: 40%;
+
+    &-text {
+      word-break: break-word;
+    }
   }
 
   &--link {
     height: 30%;
     border: none;
+
+    &-icon {
+      margin-right: 8px;
+    }
   }
 
   &--icon {
@@ -97,6 +105,16 @@
 
     &--icon {
       display: none;
+    }
+
+    &--link {
+      font-size: 12px;
+      font-style: italic;
+      pointer-events: none;
+
+      &-icon {
+        display: none!important;
+      }
     }
   }
 }

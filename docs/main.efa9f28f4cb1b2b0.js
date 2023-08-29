@@ -469,20 +469,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function WeekDayComponent_a_6_Template(rf, ctx) {
+function WeekDayComponent_a_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "fa-icon", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "fa-icon", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("href", ctx_r0.link, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx_r0.faLink);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r0.linkDomain, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.linkDomain);
   }
 }
 var WeekDay = /*#__PURE__*/(() => {
@@ -534,10 +535,12 @@ let WeekDayComponent = /*#__PURE__*/(() => {
       this.done = !this.done;
     }
     onMouseDown(event) {
+      event.preventDefault();
       if (event.target instanceof HTMLAnchorElement) return;
       this.mouseDownTime = Date.now();
     }
-    onMouseUp() {
+    onMouseUp(event) {
+      event.preventDefault();
       if (!this.mouseDownTime) return;
       const mouseUpTime = Date.now();
       const timeDiff = mouseUpTime - this.mouseDownTime;
@@ -578,41 +581,46 @@ let WeekDayComponent = /*#__PURE__*/(() => {
       link: "link",
       done: "done"
     },
-    decls: 7,
+    decls: 9,
     vars: 5,
-    consts: [[1, "weekday", 3, "ngClass", "mousedown", "mouseup"], [1, "weekday--day"], ["size", "lg", 1, "weekday--icon", 3, "icon"], [1, "weekday--recipe"], ["class", "weekday--link", "target", "_blank", 3, "href", 4, "ngIf"], ["target", "_blank", 1, "weekday--link", 3, "href"], ["size", "lg", 2, "margin-right", "8px", 3, "icon"]],
+    consts: [[1, "weekday", 3, "ngClass", "mousedown", "mouseup", "touchstart", "touchend"], [1, "weekday--day"], ["size", "lg", 1, "weekday--icon", 3, "icon"], [1, "weekday--day-text"], [1, "weekday--recipe"], [1, "weekday--recipe-text"], ["class", "weekday--link", "target", "_blank", 3, "href", 4, "ngIf"], ["target", "_blank", 1, "weekday--link", 3, "href"], ["size", "lg", 1, "weekday--link-icon", 3, "icon"], [1, "weekday--link-text"]],
     template: function WeekDayComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mousedown", function WeekDayComponent_Template_div_mousedown_0_listener($event) {
           return ctx.onMouseDown($event);
-        })("mouseup", function WeekDayComponent_Template_div_mouseup_0_listener() {
-          return ctx.onMouseUp();
+        })("mouseup", function WeekDayComponent_Template_div_mouseup_0_listener($event) {
+          return ctx.onMouseUp($event);
+        })("touchstart", function WeekDayComponent_Template_div_touchstart_0_listener($event) {
+          return ctx.onMouseDown($event);
+        })("touchend", function WeekDayComponent_Template_div_touchend_0_listener($event) {
+          return ctx.onMouseUp($event);
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "fa-icon", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, WeekDayComponent_a_6_Template, 3, 3, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4)(6, "span", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, WeekDayComponent_a_8_Template, 4, 3, "a", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.done ? "done" : "");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx.done ? ctx.faCalendarMinus : ctx.faCalendarPlus);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.weekday, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.recipe, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.weekday);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.recipe);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.linkDomain !== null);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__.FaIconComponent],
-    styles: [".weekday[_ngcontent-%COMP%] {\n  --size: 156px;\n  --lineWidth: 10px;\n  border: 1px solid var(--clr-text);\n  width: var(--size);\n  height: var(--size);\n  border-radius: 16px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n          user-select: none;\n  margin: 1px;\n  background-color: var(--clr-secondary);\n  z-index: 1;\n  position: relative;\n}\n.weekday[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.weekday--day[_ngcontent-%COMP%] {\n  height: 30%;\n  border-bottom: 1px solid var(--clr-text);\n  position: relative;\n}\n.weekday--recipe[_ngcontent-%COMP%] {\n  height: 40%;\n}\n.weekday--link[_ngcontent-%COMP%] {\n  height: 30%;\n  border: none;\n}\n.weekday--icon[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 16px;\n  top: calc(50% - 10px);\n}\n.weekday.done[_ngcontent-%COMP%] {\n  border: 2px solid var(--clr-red);\n  margin: 0;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--day[_ngcontent-%COMP%] {\n  border-bottom: 2px solid var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--recipe[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--icon[_ngcontent-%COMP%] {\n  color: var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]::before, .weekday.done[_ngcontent-%COMP%]::after {\n  background-color: var(--clr-red);\n}\n.weekday[_ngcontent-%COMP%]::before {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 25%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n.weekday[_ngcontent-%COMP%]::after {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 75%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n\n@media (max-width: 400px) {\n  .weekday[_ngcontent-%COMP%] {\n    --size: 128px;\n  }\n  .weekday--icon[_ngcontent-%COMP%] {\n    display: none;\n  }\n}"]
+    styles: [".weekday[_ngcontent-%COMP%] {\n  --size: 156px;\n  --lineWidth: 10px;\n  border: 1px solid var(--clr-text);\n  width: var(--size);\n  height: var(--size);\n  border-radius: 16px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n          user-select: none;\n  margin: 1px;\n  background-color: var(--clr-secondary);\n  z-index: 1;\n  position: relative;\n}\n.weekday[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.weekday--day[_ngcontent-%COMP%] {\n  height: 30%;\n  border-bottom: 1px solid var(--clr-text);\n  position: relative;\n}\n.weekday--recipe[_ngcontent-%COMP%] {\n  height: 40%;\n}\n.weekday--recipe-text[_ngcontent-%COMP%] {\n  word-break: break-word;\n}\n.weekday--link[_ngcontent-%COMP%] {\n  height: 30%;\n  border: none;\n}\n.weekday--link-icon[_ngcontent-%COMP%] {\n  margin-right: 8px;\n}\n.weekday--icon[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 16px;\n  top: calc(50% - 10px);\n}\n.weekday.done[_ngcontent-%COMP%] {\n  border: 2px solid var(--clr-red);\n  margin: 0;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--day[_ngcontent-%COMP%] {\n  border-bottom: 2px solid var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--recipe[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--icon[_ngcontent-%COMP%] {\n  color: var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]::before, .weekday.done[_ngcontent-%COMP%]::after {\n  background-color: var(--clr-red);\n}\n.weekday[_ngcontent-%COMP%]::before {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 25%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n.weekday[_ngcontent-%COMP%]::after {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 75%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n\n@media (max-width: 400px) {\n  .weekday[_ngcontent-%COMP%] {\n    --size: 128px;\n  }\n  .weekday--icon[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .weekday--link[_ngcontent-%COMP%] {\n    font-size: 12px;\n    font-style: italic;\n    pointer-events: none;\n  }\n  .weekday--link-icon[_ngcontent-%COMP%] {\n    display: none !important;\n  }\n}"]
   });
   return WeekDayComponent;
 })();

@@ -1,13 +1,19 @@
-<div class="weekday" [ngClass]="done ? 'done' : ''" (mousedown)="onMouseDown($any($event))" (mouseup)="onMouseUp()">
+<div
+  class="weekday"
+  [ngClass]="done ? 'done' : ''"
+  (mousedown)="onMouseDown($any($event))"
+  (mouseup)="onMouseUp($any($event))"
+  (touchstart)="onMouseDown($any($event))"
+  (touchend)="onMouseUp($any($event))">
   <div class="weekday--day">
     <fa-icon class="weekday--icon" [icon]="done ? faCalendarMinus : faCalendarPlus" size="lg"/>
-    {{weekday}}
+    <span class="weekday--day-text">{{weekday}}</span>
   </div>
   <div class="weekday--recipe">
-    {{recipe}}
+    <span class="weekday--recipe-text">{{recipe}}</span>
   </div>
   <a *ngIf="linkDomain !== null" class="weekday--link" [href]="link" target="_blank">
-    <fa-icon [icon]="faLink" size="lg" style="margin-right: 8px"/>
-    {{linkDomain}}
+    <fa-icon [icon]="faLink" size="lg" class="weekday--link-icon"/>
+    <span class="weekday--link-text">{{linkDomain}}</span>
   </a>
 </div>

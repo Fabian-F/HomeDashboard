@@ -61,11 +61,13 @@ export class WeekDayComponent {
   }
 
   onMouseDown(event: MouseEvent) {
+    event.preventDefault();
     if (event.target instanceof HTMLAnchorElement) return;
     this.mouseDownTime = Date.now();
   }
 
-  onMouseUp() {
+  onMouseUp(event: MouseEvent) {
+    event.preventDefault();
     if (!this.mouseDownTime) return;
     const mouseUpTime = Date.now();
     const timeDiff = mouseUpTime - this.mouseDownTime;
