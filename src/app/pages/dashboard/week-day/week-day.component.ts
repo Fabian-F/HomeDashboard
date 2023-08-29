@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { faCalendarMinus, faCalendarPlus, faLink } from '@fortawesome/free-solid-svg-icons';
 
 export enum WeekDay {
@@ -20,6 +20,7 @@ export class WeekDayComponent {
   private _done = false;
   private _link: string | null = null;
   private mouseDownTime: number | undefined;
+  private isTouchMove = false;
   linkDomain: string | null = null;
   activeStyle = false;
 
@@ -62,20 +63,28 @@ export class WeekDayComponent {
   }
 
   onMouseDown(event: MouseEvent) {
-    event.preventDefault();
+    console.log("mousedown");
+    //if (event.cancelable) event.preventDefault();
     if (event.target instanceof HTMLAnchorElement) return;
     this.mouseDownTime = Date.now();
+    this.isTouchMove = false;
     setTimeout(() => {
-      if (this.mouseDownTime) this.activeStyle = true;
+      if (!this.isTouchMove && this.mouseDownTime) this.activeStyle = true;
     }, 50);
   }
 
+  @HostListener('document:touchmove')
+  onTouchMove(event: TouchEvent) {
+    this.isTouchMove = true;
+    this.activeStyle = false;
+  }
+
   onMouseUp(event: MouseEvent) {
-    event.preventDefault();
-    if (!this.mouseDownTime) return;
+    if (this.isTouchMove) return;
+    if (event.cancelable) event.preventDefault();
     this.activeStyle = false;
     const mouseUpTime = Date.now();
-    const timeDiff = mouseUpTime - this.mouseDownTime;
+    const timeDiff = mouseUpTime - this.mouseDownTime!;
     this.mouseDownTime = undefined;
     if (timeDiff > 200) {
       if (this.link) {

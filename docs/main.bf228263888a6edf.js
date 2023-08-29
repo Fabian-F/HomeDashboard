@@ -376,23 +376,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function DashboardComponent_week_day_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "week-day", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("dragStart", function DashboardComponent_week_day_6_Template_week_day_dragStart_0_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
-      const value_r1 = restoredCtx.$implicit;
-      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r2.dragStart($event, "Test-" + value_r1));
-    })("dragEnd", function DashboardComponent_week_day_6_Template_week_day_dragEnd_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
-      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r4.dragEnd());
-    })("drop", function DashboardComponent_week_day_6_Template_week_day_drop_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
-      const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r5.drop($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "week-day", 4);
   }
   if (rf & 2) {
     const value_r1 = ctx.$implicit;
@@ -424,7 +408,7 @@ let DashboardComponent = /*#__PURE__*/(() => {
     selectors: [["app-dashboard"]],
     decls: 7,
     vars: 1,
-    consts: [[2, "color", "red"], [1, "weekplan"], [1, "weekplan--calendar"], ["draggable", "true", "link", "https://www.chefkoch.de/rezepte/2683021420902347/Pikante-Pfannkuchen-mit-Schinken-und-Kaese.html", 3, "weekday", "recipe", "dragStart", "dragEnd", "drop", 4, "ngFor", "ngForOf"], ["draggable", "true", "link", "https://www.chefkoch.de/rezepte/2683021420902347/Pikante-Pfannkuchen-mit-Schinken-und-Kaese.html", 3, "weekday", "recipe", "dragStart", "dragEnd", "drop"]],
+    consts: [[2, "color", "red"], [1, "weekplan"], [1, "weekplan--calendar"], ["link", "https://www.chefkoch.de/rezepte/2683021420902347/Pikante-Pfannkuchen-mit-Schinken-und-Kaese.html", 3, "weekday", "recipe", 4, "ngFor", "ngForOf"], ["link", "https://www.chefkoch.de/rezepte/2683021420902347/Pikante-Pfannkuchen-mit-Schinken-und-Kaese.html", 3, "weekday", "recipe"]],
     template: function DashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 0);
@@ -510,6 +494,7 @@ let WeekDayComponent = /*#__PURE__*/(() => {
     constructor() {
       this._done = false;
       this._link = null;
+      this.isTouchMove = false;
       this.linkDomain = null;
       this.activeStyle = false;
       this.faCalendarMinus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faCalendarMinus;
@@ -542,16 +527,22 @@ let WeekDayComponent = /*#__PURE__*/(() => {
       this.done = !this.done;
     }
     onMouseDown(event) {
-      event.preventDefault();
+      console.log("mousedown");
+      //if (event.cancelable) event.preventDefault();
       if (event.target instanceof HTMLAnchorElement) return;
       this.mouseDownTime = Date.now();
+      this.isTouchMove = false;
       setTimeout(() => {
-        if (this.mouseDownTime) this.activeStyle = true;
+        if (!this.isTouchMove && this.mouseDownTime) this.activeStyle = true;
       }, 50);
     }
+    onTouchMove(event) {
+      this.isTouchMove = true;
+      this.activeStyle = false;
+    }
     onMouseUp(event) {
-      event.preventDefault();
-      if (!this.mouseDownTime) return;
+      if (this.isTouchMove) return;
+      if (event.cancelable) event.preventDefault();
       this.activeStyle = false;
       const mouseUpTime = Date.now();
       const timeDiff = mouseUpTime - this.mouseDownTime;
@@ -587,6 +578,13 @@ let WeekDayComponent = /*#__PURE__*/(() => {
   _class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
     type: _class,
     selectors: [["week-day"]],
+    hostBindings: function WeekDayComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("touchmove", function WeekDayComponent_touchmove_HostBindingHandler() {
+          return ctx.onTouchMove();
+        }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveDocument"]);
+      }
+    },
     inputs: {
       weekday: "weekday",
       recipe: "recipe",
