@@ -21,6 +21,7 @@ export class WeekDayComponent {
   private _link: string | null = null;
   private mouseDownTime: number | undefined;
   linkDomain: string | null = null;
+  activeStyle = false;
 
   faCalendarMinus = faCalendarMinus;
   faCalendarPlus = faCalendarPlus;
@@ -64,13 +65,18 @@ export class WeekDayComponent {
     event.preventDefault();
     if (event.target instanceof HTMLAnchorElement) return;
     this.mouseDownTime = Date.now();
+    setTimeout(() => {
+      if (this.mouseDownTime) this.activeStyle = true;
+    }, 50);
   }
 
   onMouseUp(event: MouseEvent) {
     event.preventDefault();
     if (!this.mouseDownTime) return;
+    this.activeStyle = false;
     const mouseUpTime = Date.now();
     const timeDiff = mouseUpTime - this.mouseDownTime;
+    this.mouseDownTime = undefined;
     if (timeDiff > 200) {
       if (this.link) {
         window.open(this.link, "_blank");

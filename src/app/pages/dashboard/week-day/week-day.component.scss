@@ -74,6 +74,24 @@
     }
   }
 
+  &.active {
+    border: 2px solid var(--clr-primary);
+    margin: 0;
+
+    .weekday--day {
+      border-bottom: 2px solid var(--clr-primary);
+    }
+
+    .weekday--icon {
+      color: var(--clr-primary);
+    }
+
+    &::before,
+    &::after {
+      background-color: var(--clr-primary);
+    }
+  }
+
   &::before {
     content: ' ';
     display: block;

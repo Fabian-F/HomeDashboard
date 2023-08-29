@@ -486,6 +486,12 @@ function WeekDayComponent_a_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.linkDomain);
   }
 }
+const _c0 = function (a0, a1) {
+  return {
+    "done": a0,
+    "active": a1
+  };
+};
 var WeekDay = /*#__PURE__*/(() => {
   (function (WeekDay) {
     WeekDay["Montag"] = "Montag";
@@ -505,6 +511,7 @@ let WeekDayComponent = /*#__PURE__*/(() => {
       this._done = false;
       this._link = null;
       this.linkDomain = null;
+      this.activeStyle = false;
       this.faCalendarMinus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faCalendarMinus;
       this.faCalendarPlus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faCalendarPlus;
       this.faLink = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__.faLink;
@@ -538,12 +545,17 @@ let WeekDayComponent = /*#__PURE__*/(() => {
       event.preventDefault();
       if (event.target instanceof HTMLAnchorElement) return;
       this.mouseDownTime = Date.now();
+      setTimeout(() => {
+        if (this.mouseDownTime) this.activeStyle = true;
+      }, 50);
     }
     onMouseUp(event) {
       event.preventDefault();
       if (!this.mouseDownTime) return;
+      this.activeStyle = false;
       const mouseUpTime = Date.now();
       const timeDiff = mouseUpTime - this.mouseDownTime;
+      this.mouseDownTime = undefined;
       if (timeDiff > 200) {
         if (this.link) {
           window.open(this.link, "_blank");
@@ -582,7 +594,7 @@ let WeekDayComponent = /*#__PURE__*/(() => {
       done: "done"
     },
     decls: 9,
-    vars: 5,
+    vars: 8,
     consts: [[1, "weekday", 3, "ngClass", "mousedown", "mouseup", "touchstart", "touchend"], [1, "weekday--day"], ["size", "lg", 1, "weekday--icon", 3, "icon"], [1, "weekday--day-text"], [1, "weekday--recipe"], [1, "weekday--recipe-text"], ["class", "weekday--link", "target", "_blank", 3, "href", 4, "ngIf"], ["target", "_blank", 1, "weekday--link", 3, "href"], ["size", "lg", 1, "weekday--link-icon", 3, "icon"], [1, "weekday--link-text"]],
     template: function WeekDayComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -608,7 +620,7 @@ let WeekDayComponent = /*#__PURE__*/(() => {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.done ? "done" : "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](5, _c0, ctx.done, ctx.activeStyle));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx.done ? ctx.faCalendarMinus : ctx.faCalendarPlus);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
@@ -620,7 +632,7 @@ let WeekDayComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_3__.FaIconComponent],
-    styles: [".weekday[_ngcontent-%COMP%] {\n  --size: 156px;\n  --lineWidth: 10px;\n  border: 1px solid var(--clr-text);\n  width: var(--size);\n  height: var(--size);\n  border-radius: 16px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n          user-select: none;\n  margin: 1px;\n  background-color: var(--clr-secondary);\n  z-index: 1;\n  position: relative;\n}\n.weekday[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.weekday--day[_ngcontent-%COMP%] {\n  height: 30%;\n  border-bottom: 1px solid var(--clr-text);\n  position: relative;\n}\n.weekday--recipe[_ngcontent-%COMP%] {\n  height: 40%;\n}\n.weekday--recipe-text[_ngcontent-%COMP%] {\n  word-break: break-word;\n}\n.weekday--link[_ngcontent-%COMP%] {\n  height: 30%;\n  border: none;\n}\n.weekday--link-icon[_ngcontent-%COMP%] {\n  margin-right: 8px;\n}\n.weekday--icon[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 16px;\n  top: calc(50% - 10px);\n}\n.weekday.done[_ngcontent-%COMP%] {\n  border: 2px solid var(--clr-red);\n  margin: 0;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--day[_ngcontent-%COMP%] {\n  border-bottom: 2px solid var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--recipe[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--icon[_ngcontent-%COMP%] {\n  color: var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]::before, .weekday.done[_ngcontent-%COMP%]::after {\n  background-color: var(--clr-red);\n}\n.weekday[_ngcontent-%COMP%]::before {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 25%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n.weekday[_ngcontent-%COMP%]::after {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 75%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n\n@media (max-width: 400px) {\n  .weekday[_ngcontent-%COMP%] {\n    --size: 128px;\n  }\n  .weekday--icon[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .weekday--link[_ngcontent-%COMP%] {\n    font-size: 12px;\n    font-style: italic;\n    pointer-events: none;\n  }\n  .weekday--link-icon[_ngcontent-%COMP%] {\n    display: none !important;\n  }\n}"]
+    styles: [".weekday[_ngcontent-%COMP%] {\n  --size: 156px;\n  --lineWidth: 10px;\n  border: 1px solid var(--clr-text);\n  width: var(--size);\n  height: var(--size);\n  border-radius: 16px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  -webkit-user-select: none;\n          user-select: none;\n  margin: 1px;\n  background-color: var(--clr-secondary);\n  z-index: 1;\n  position: relative;\n}\n.weekday[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.weekday--day[_ngcontent-%COMP%] {\n  height: 30%;\n  border-bottom: 1px solid var(--clr-text);\n  position: relative;\n}\n.weekday--recipe[_ngcontent-%COMP%] {\n  height: 40%;\n}\n.weekday--recipe-text[_ngcontent-%COMP%] {\n  word-break: break-word;\n}\n.weekday--link[_ngcontent-%COMP%] {\n  height: 30%;\n  border: none;\n}\n.weekday--link-icon[_ngcontent-%COMP%] {\n  margin-right: 8px;\n}\n.weekday--icon[_ngcontent-%COMP%] {\n  position: absolute;\n  left: 16px;\n  top: calc(50% - 10px);\n}\n.weekday.done[_ngcontent-%COMP%] {\n  border: 2px solid var(--clr-red);\n  margin: 0;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--day[_ngcontent-%COMP%] {\n  border-bottom: 2px solid var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--recipe[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n}\n.weekday.done[_ngcontent-%COMP%]   .weekday--icon[_ngcontent-%COMP%] {\n  color: var(--clr-red);\n}\n.weekday.done[_ngcontent-%COMP%]::before, .weekday.done[_ngcontent-%COMP%]::after {\n  background-color: var(--clr-red);\n}\n.weekday.active[_ngcontent-%COMP%] {\n  border: 2px solid var(--clr-primary);\n  margin: 0;\n}\n.weekday.active[_ngcontent-%COMP%]   .weekday--day[_ngcontent-%COMP%] {\n  border-bottom: 2px solid var(--clr-primary);\n}\n.weekday.active[_ngcontent-%COMP%]   .weekday--icon[_ngcontent-%COMP%] {\n  color: var(--clr-primary);\n}\n.weekday.active[_ngcontent-%COMP%]::before, .weekday.active[_ngcontent-%COMP%]::after {\n  background-color: var(--clr-primary);\n}\n.weekday[_ngcontent-%COMP%]::before {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 25%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n.weekday[_ngcontent-%COMP%]::after {\n  content: \" \";\n  display: block;\n  width: 5px;\n  height: var(--lineWidth);\n  background-color: var(--clr-text);\n  position: absolute;\n  left: 75%;\n  top: calc(0px - var(--lineWidth));\n  z-index: 0;\n}\n\n@media (max-width: 400px) {\n  .weekday[_ngcontent-%COMP%] {\n    --size: 128px;\n  }\n  .weekday--icon[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .weekday--link[_ngcontent-%COMP%] {\n    font-size: 12px;\n    font-style: italic;\n    pointer-events: none;\n  }\n  .weekday--link-icon[_ngcontent-%COMP%] {\n    display: none !important;\n  }\n}"]
   });
   return WeekDayComponent;
 })();

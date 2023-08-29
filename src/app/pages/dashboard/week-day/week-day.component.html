@@ -1,6 +1,6 @@
 <div
   class="weekday"
-  [ngClass]="done ? 'done' : ''"
+  [ngClass]="{'done': done, 'active': activeStyle}"
   (mousedown)="onMouseDown($any($event))"
   (mouseup)="onMouseUp($any($event))"
   (touchstart)="onMouseDown($any($event))"
