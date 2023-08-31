@@ -155,7 +155,7 @@ export class ListComponent implements OnDestroy {
       categoryControl: category,
       onSaleControl: onSale
     });
-    this.numInput?.nativeElement.focus();
+    this.numInput?.nativeElement.select();
   }
 
   lockFormElements(lock: boolean) {

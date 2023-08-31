@@ -41,7 +41,7 @@
       <!-- Row if search has no results -->
       <tr *ngIf="!loading && listItems.length < 1">
         <td [attr.colspan]="showLessDetails ? '4' : '5'" style="text-align: center;">
-          Suche fehlgeschlagen.
+          {{allListItems.length > 0 ? 'Suche fehlgeschlagen.' : 'Die Liste ist leer.'}}
         </td>
       </tr>
     </table>
