@@ -237,18 +237,12 @@ export class ListComponent implements OnDestroy {
   }
 
   print() {
-    let { printContent, numOfLines } = this.generatePrintListHTML();
+    let printContent = this.generatePrintListHTML();
     /* let printContent = '';
     let numOfLines = 61;
     for(let i = 1; i < numOfLines+1; i++) {
       printContent += `<div class="line"><span>${i}</span></div>`;
     } */
-
-    const minRows = 1; // Doesnt work right now
-    const linesPerColumn = 30;
-    const numberOfColumns = Math.max(minRows, Math.ceil(numOfLines / linesPerColumn));
-
-    console.log(numberOfColumns);
 
     const popup = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
     if (!popup) return;
@@ -286,7 +280,7 @@ export class ListComponent implements OnDestroy {
     popup.document.close();
   }
 
-  private generatePrintListHTML(): {printContent: string, numOfLines: number} {
+  private generatePrintListHTML(): string {
     let htmlTagList: Array<string> = [];
     let numOfLines = 0;
     this.categories.sort((a, b) => a.sortIndex - b.sortIndex)
@@ -294,7 +288,7 @@ export class ListComponent implements OnDestroy {
         const categoryHtmlTags: Array<string> = [];
         const itemsInCategory = this.allListItems.filter(item => item.type!.category?.toLowerCase() === category.name.toLowerCase());
         if (itemsInCategory.length) {
-          categoryHtmlTags.push(`<span class="category">${category.name}:</span>`)
+          categoryHtmlTags.push(`<span class="category">${category.name}:</span>`);
           itemsInCategory.forEach((item: ListItem) => {
             let currItem = `${item.num}`;
             currItem += `${this.units.find(unit => unit.name === item.type?.unit)?.abbreviation ?? 'x'}`
@@ -302,14 +296,17 @@ export class ListComponent implements OnDestroy {
             currItem = '<span>' + currItem + '</span>';
             categoryHtmlTags.push(currItem);
           });
+          const remainingSpaceThisColumn = 30 - (numOfLines % 30);
+          if (remainingSpaceThisColumn < categoryHtmlTags.length) {
+            for(let i = 0; i < remainingSpaceThisColumn; i++) {
+              categoryHtmlTags.unshift('<span></span>');
+            }
+          }
+          numOfLines += categoryHtmlTags.length + 1;
           htmlTagList.push(categoryHtmlTags.join(''));
-          numOfLines += (categoryHtmlTags.length * 2) - 1;
         }
       });
-    return {
-      printContent: htmlTagList.join('<span></span>'),
-      numOfLines: numOfLines
-    };
+    return htmlTagList.join('<span></span>');
   }
 
   private setDisabled(control: AbstractControl, disabled: boolean) {
