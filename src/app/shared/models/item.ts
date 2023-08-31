@@ -29,6 +29,11 @@ export interface Category {
   sortIndex: number
 }
 
+export interface Unit {
+  name: string,
+  abbreviation: string
+}
+
 export interface aNamed {
   name?: string
 }

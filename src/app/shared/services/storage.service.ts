@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DocumentReference, Firestore, addDoc, collection, collectionData, doc, deleteDoc, setDoc, query, where, getDocs, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Category, Item, ListItem, aItem, aListItem, aNamed } from '../models/item';
+import { Category, Item, ListItem, Unit, aItem, aListItem, aNamed } from '../models/item';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class StorageService {
   listItems: Observable<aListItem[]>;
   itemDefs: Observable<aItem[]>;
   categories: Observable<Category[]>;
-  units: Observable<aNamed[]>;
+  units: Observable<Unit[]>;
 
   constructor(
     private firestore: Firestore
@@ -25,7 +25,7 @@ export class StorageService {
     this.categories = collectionData(categoriesCollection) as Observable<Category[]>;
 
     const unitCollection = collection(this.firestore, 'units');
-    this.units = collectionData(unitCollection) as Observable<aNamed[]>;
+    this.units = collectionData(unitCollection) as Observable<Unit[]>;
   }
 
   async addItem(listItem: ListItem, newItemDef: boolean) {

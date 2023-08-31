@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
-import { ListItem, Item, aListItem, aItem, aNamed, Category } from 'src/app/shared/models/item';
+import { ListItem, Item, aListItem, aItem, aNamed, Category, Unit } from 'src/app/shared/models/item';
 import { StorageService } from 'src/app/shared/services/storage.service';
-import { faPenToSquare, faTrash, faSpinner, faCartPlus, faCircleXmark, faCircleCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare, faTrash, faSpinner, faCartPlus, faCircleXmark, faCircleCheck, faXmark, faPrint } from '@fortawesome/free-solid-svg-icons';
 import { getDoc } from '@angular/fire/firestore';
 import { Subscription } from 'rxjs';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
@@ -19,12 +19,13 @@ export class ListComponent implements OnDestroy {
   faCircleXmark = faCircleXmark;
   faCircleCheck = faCircleCheck;
   faXmark = faXmark;
+  faPrint = faPrint;
 
   allListItems: Array<ListItem> = [];
   listItems: Array<ListItem> = [];
   itemDefs: Array<Item> = [];
   categories: Array<Category> = [];
-  units: Array<string> = [];
+  units: Array<Unit> = [];
   loading = false;
   lockUnitAndCategory = false;
   searchValue = '';
@@ -66,11 +67,11 @@ export class ListComponent implements OnDestroy {
       }
     }));
 
-    this.subscriptions.push(this.storageService.units.subscribe(async (aNamed: Array<aNamed>) => {
-      this.units = await this.populateNamed(aNamed);
+    this.subscriptions.push(this.storageService.units.subscribe(async (aUnits: Array<Unit>) => {
+      this.units = aUnits;
 
       if (!this.addFormGroup.controls['unitControl'].value) {
-        this.addFormGroup.controls['unitControl'].patchValue(this.units.find(unit => unit === "Stück") ?? this.units[0]);
+        this.addFormGroup.controls['unitControl'].patchValue(this.units.find(unit => unit.name === "Stück")?.name ?? this.units[0].name);
       }
     }));
 
@@ -142,7 +143,7 @@ export class ListComponent implements OnDestroy {
 
   resetForm(
     num = 1,
-    unit = this.units.find(unit => unit === 'Stück') ?? this.units[0],
+    unit = this.units.find(unit => unit.name === 'Stück') ?? this.units[0].name,
     category = this.categories[0].name,
     onSale = false
     ) {
@@ -233,6 +234,82 @@ export class ListComponent implements OnDestroy {
     return Promise.all(aNamed.map<Promise<string>>(async (aNamed: aNamed) => {
       return aNamed?.name ?? '';
     }));
+  }
+
+  print() {
+    let { printContent, numOfLines } = this.generatePrintListHTML();
+    /* let printContent = '';
+    let numOfLines = 61;
+    for(let i = 1; i < numOfLines+1; i++) {
+      printContent += `<div class="line"><span>${i}</span></div>`;
+    } */
+
+    const minRows = 1; // Doesnt work right now
+    const linesPerColumn = 30;
+    const numberOfColumns = Math.max(minRows, Math.ceil(numOfLines / linesPerColumn));
+
+    console.log(numberOfColumns);
+
+    const popup = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+    if (!popup) return;
+    popup.document.open();
+    popup.document.write(`
+      <html>
+        <head>
+          <style>
+            @media print {
+              @page {
+                height: 148mm;
+                width: 210mm;
+                margin: 0mm !important;
+              }
+
+              body {
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-rows: repeat(30, 1fr);
+                column-gap: 10px;
+              }
+
+              .category {
+                font-weight: 600;
+              }
+
+            }
+          </style>
+        </head>
+        <body onload="window.print();">
+          ${printContent}
+        </body>
+      </html>`
+    );
+    popup.document.close();
+  }
+
+  private generatePrintListHTML(): {printContent: string, numOfLines: number} {
+    let htmlTagList: Array<string> = [];
+    let numOfLines = 0;
+    this.categories.sort((a, b) => a.sortIndex - b.sortIndex)
+      .forEach(category => {
+        const categoryHtmlTags: Array<string> = [];
+        const itemsInCategory = this.allListItems.filter(item => item.type!.category?.toLowerCase() === category.name.toLowerCase());
+        if (itemsInCategory.length) {
+          categoryHtmlTags.push(`<span class="category">${category.name}:</span>`)
+          itemsInCategory.forEach((item: ListItem) => {
+            let currItem = `${item.num}`;
+            currItem += `${this.units.find(unit => unit.name === item.type?.unit)?.abbreviation ?? 'x'}`
+            currItem += ` ${item.type?.name}`
+            currItem = '<span>' + currItem + '</span>';
+            categoryHtmlTags.push(currItem);
+          });
+          htmlTagList.push(categoryHtmlTags.join(''));
+          numOfLines += (categoryHtmlTags.length * 2) - 1;
+        }
+      });
+    return {
+      printContent: htmlTagList.join('<span></span>'),
+      numOfLines: numOfLines
+    };
   }
 
   private setDisabled(control: AbstractControl, disabled: boolean) {
