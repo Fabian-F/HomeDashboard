@@ -249,6 +249,10 @@
 
 @media (max-width: 650px) {
 
+  .print-button {
+    display: none;
+  }
+
   .list-table--wrapper {
     max-height: 55vh !important;
   }

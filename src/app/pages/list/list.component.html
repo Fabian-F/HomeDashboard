@@ -1,11 +1,13 @@
 <div class="list-wrapper">
   <div class="table-controls">
-    <div>
-      <input placeholder="Suche" type="text" [(ngModel)]="searchValue" (input)="onSearch($any($event))"/>
+    <div style="display: flex;">
+      <div>
+        <input placeholder="Suche" type="text" [(ngModel)]="searchValue" (input)="onSearch($any($event))"/>
+      </div>
+      <button class="input-button" (click)="searchValue = ''; onSearch()">
+        <fa-icon [icon]="faXmark" size="2x"></fa-icon>
+      </button>
     </div>
-    <button class="input-button" (click)="searchValue = ''; onSearch()">
-      <fa-icon [icon]="faXmark" size="2x"></fa-icon>
-    </button>
     <button class="print-button" (click)="print()">
       <fa-icon [icon]="faPrint" size="lg"/>
     </button>
